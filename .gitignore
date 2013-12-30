@@ -1,0 +1,5 @@
+# ignore the elpa directory. No need to clone these (they'd be version controled anyway)
+elpa/
+
+# ignore the server directory. Unsafe infor changing all the time anyway
+server/
