@@ -3,3 +3,6 @@ elpa/
 
 # ignore the server directory. Unsafe infor changing all the time anyway
 server/
+
+# ignore the auto saves directory
+auto-save-list/
