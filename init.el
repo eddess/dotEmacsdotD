@@ -17,5 +17,8 @@
 ;; load packages
 (dolist (file '(core
 		appearance
-		keymappings))
+		keymappings
+
+		; modular configs
+		php-mc))
   (require file))
