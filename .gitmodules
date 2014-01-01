@@ -1,3 +1,6 @@
 [submodule "apps/web-mode"]
 	path = apps/web-mode
 	url = git@github.com:fxbois/web-mode.git
+[submodule "apps/mmm-mode"]
+	path = apps/mmm-mode
+	url = git@github.com:purcell/mmm-mode.git
