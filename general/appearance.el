@@ -11,7 +11,7 @@
 ;; font
 (when window-system
   (cond
-   ((string-equal system-type "windows-nt") (set-face-attribute 'default nil :font "Consolas-13"))
+   ((string-equal system-type "windows-nt") (set-face-attribute 'default nil :font "Consolas-10"))
    ((string-equal system-type "darwin") (set-face-attribute 'default nil :font "Menlo-12"))))
 
 ;; cursor

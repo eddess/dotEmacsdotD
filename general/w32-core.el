@@ -1,3 +1,6 @@
+;; Common Lisp dependency
+(eval-when-compile (require 'cl))
+
 (defun exit-with-server-alive()
   ;; stops the emacs server from quitting
   (interactive)
@@ -23,20 +26,20 @@
 
 ;; don't prompt when killing all buffers
 (defadvice kill-some-buffers (around killServer activate)
-  		   (flet ((yes-or-no-p (&rest args) t)
-	 			  (y-or-n-p (&rest args) t))
-    		 ad-do-it))
+  (flet ((yes-or-no-p (&rest args) t)
+	 (y-or-n-p (&rest args) t))
+	ad-do-it))
 
 
-;; binding C-xC-c to kill the current session of files before leaving
+;; function that closes all buffers before quitting
 (defun kill-session-with-server-alive()
   (interactive)
   (save-some-buffers)
   (kill-some-buffers)
   (kill-emacs))
 
+;; binding C-xC-c to kill the current session of files before leaving
 (global-set-key (kbd "C-x C-c") 'kill-session-with-server-alive)
-
 ;; Dynamic library paths in Emacs 24 folder
 (setq dynamic-library-alist
       '((xpm "libXpm.dll")

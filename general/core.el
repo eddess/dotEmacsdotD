@@ -7,8 +7,7 @@
 
 ;; OS specific core settings
 (cond
- ((string-equal system-type "windows-nt")
-  ((require 'w32-core))))
+ ((string-equal system-type "windows-nt")(require 'w32-core)))
 
 ;; disable the bell
 (setq ring-bell-function 'ignore)
