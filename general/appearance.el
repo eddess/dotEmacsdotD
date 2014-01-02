@@ -37,3 +37,4 @@
 
 ;; Color theme
 (load "~/.emacs.d/themes/molokai-theme/molokai-theme.el")
+(color-theme-molokai)
