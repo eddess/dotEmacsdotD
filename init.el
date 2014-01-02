@@ -16,11 +16,10 @@
 
 ;; load packages
 (dolist (file '(core
-				myserver
-				appearance
-				keymappings
-				
-										; modular configs
-				php-mc
-				tex-mc))
+		appearance
+		keymappings
+
+		; modular configs
+		php-mc
+		tex-mc))
   (require file))
