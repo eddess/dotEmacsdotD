@@ -34,3 +34,6 @@
 
 ;; package variable
 (provide 'appearance)
+
+;; Color theme
+(load "~/.emacs.d/themes/molokai-theme/molokai-theme.el")
