@@ -15,7 +15,7 @@
    ((string-equal system-type "darwin") (set-face-attribute 'default nil :font "Menlo-12"))))
 
 ;; cursor
-(setq default-cursor-type 'bar)
+(setq cursor-type 'bar)
 
 ;; default window size in GUI mode
 (when window-system

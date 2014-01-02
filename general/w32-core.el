@@ -9,19 +9,19 @@
 
 
 ;; Variable used to advice emacsserver to NOT quit
-(defvar killServerFlag nil)
+(defvar myserver-killServerFlag nil)
 
 ;; now advice emacs to query this variable when asked to kill
 (defadvice kill-emacs (around killServer activate)
   		   "Only kill emacs if killServerFlag is set"
-  		   (if killServerFlag
+  		   (if  myserver-killServerFlag
       		 ad-do-it
     		 (exit-with-server-alive)))
 
 ;; the function that will actually kill the server
 (defun kill-server ()
   (interactive)
-  (setq killServerFlag t)
+  (setq  myserver-killServerFlag t)
   (save-buffers-kill-emacs))
 
 ;; don't prompt when killing all buffers
