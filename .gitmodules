@@ -4,9 +4,9 @@
 [submodule "apps/mmm-mode"]
 	path = apps/mmm-mode
 	url = git@github.com:purcell/mmm-mode.git
-[submodule "themes/color-theme-github"]
-	path = themes/color-theme-github
-	url = git@github.com:dudleyf/color-theme-github.git
-[submodule "themes/molokai-theme"]
-	path = themes/molokai-theme
+[submodule "themes/molokai"]
+	path = themes/molokai
 	url = git@github.com:hbin/molokai-theme.git
+[submodule "themes/solarized"]
+	path = themes/solarized
+	url = git@github.com:sellout/emacs-color-theme-solarized.git

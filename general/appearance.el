@@ -36,4 +36,4 @@
 (provide 'appearance)
 
 ;; Color theme
-(load "~/.emacs.d/themes/molokai-theme/molokai-theme.el")
+(load "~/.emacs.d/themes/molokai/molokai-theme.el")

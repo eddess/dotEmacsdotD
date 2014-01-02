@@ -1,6 +1,6 @@
 ;; disable autosaves and backups. This ain't 19-something anymore
-(setq backup-inhibited t)
-(setq auto-save-default nil)
+(setq-default backup-inhibited t)
+(setq-default auto-save-default nil)
 
 ;; yes-or-no bound to y-or-n
 (defalias 'yes-or-no-p 'y-or-n-p)
