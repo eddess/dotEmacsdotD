@@ -20,5 +20,6 @@
 		keymappings
 
 		; modular configs
-		php-mc))
+		php-mc
+		tex-mc))
   (require file))
