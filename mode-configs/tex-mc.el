@@ -2,15 +2,14 @@
 ;;; Configs for dealing with web technologies
 
 ;; function that does the loading and configuring of web-mode for php
-(defun php-mc-initialize ()
+(defun tex-mc-initialize ()
   (interactive)
-  (when (require 'web-mode "~/.emacs.d/apps/web-mode/web-mode.el" t)
-	(web-mode)))
-  
+  (require 'tex-site "~/.emacs.d/apps/auctex/site-start.el" t)
+  (tex-mode))
 
-;; php files
+;; Files ending in .tex
 (add-to-list 'auto-mode-alist
-	     '("\\.php\\'" . php-mc-initialize))
+			 '("\\.tex$" . tex-mc-initialize))
 
 ;; package variable
-(provide 'php-mc)
+(provide 'tex-mc)
