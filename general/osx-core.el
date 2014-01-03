@@ -1,18 +1,10 @@
-;; Common Lisp dependency
-(eval-when-compile (require 'cl))
+;; Bind the delete frame sequence from OSX to always delete frame if my server running
+(when (require 'myserver "dont-force.el" t)
+  (global-set-key (kbd "s-w") 'delete-this-frame))
 
-;; Always delete frame without asking
-(defun delete-this-frame()
-  (interactive)
-  (unless
-	  (condition-case nil
-		  (delete-frame (selected-frame) t)
-		(error nil))
-	(save-buffers-kill-emacs)))
-	
-
-;; Bind the delete frame sequence from OSX to always delete frame
-(global-set-key (kbd "s-w") 'delete-this-frame)
+;; Bind the delete program sequence to delete all frames
+(when (require 'myserver "dont-force.el" t)
+  (global-set-key (kbd "s-q") 'delete-all-frames))
 
 ;; package variable
 (provide 'osx-core)

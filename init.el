@@ -15,11 +15,12 @@
 	      '("~/.emacs.d/info")))
 
 ;; load packages
-(dolist (file '(core
-		appearance
-		keymappings
-
-		; modular configs
-		php-mc
-		tex-mc))
+(dolist (file '(myserver
+				core
+				appearance
+				keymappings
+				
+				;; modular configs
+				php-mc
+				tex-mc))
   (require file))
