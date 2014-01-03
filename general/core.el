@@ -9,6 +9,9 @@
 (cond
  ((string-equal system-type "windows-nt")(require 'w32-core)))
 
+(cond
+ ((string-equal system-type "darwin")(require 'osx-core)))
+
 ;; disable the bell
 (setq ring-bell-function 'ignore)
 

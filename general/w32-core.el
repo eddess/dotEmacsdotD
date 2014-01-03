@@ -9,19 +9,19 @@
 
 
 ;; Variable used to advice emacsserver to NOT quit
-(defvar myserver-killServerFlag nil)
+(defvar myserver-killFlag nil)
 
 ;; now advice emacs to query this variable when asked to kill
 (defadvice kill-emacs (around killServer activate)
   		   "Only kill emacs if killServerFlag is set"
-  		   (if  myserver-killServerFlag
+  		   (if  myserver-killFlag
       		 ad-do-it
     		 (exit-with-server-alive)))
 
 ;; the function that will actually kill the server
 (defun kill-server ()
   (interactive)
-  (setq  myserver-killServerFlag t)
+  (setq  myserver-killFlag t)
   (save-buffers-kill-emacs))
 
 ;; don't prompt when killing all buffers
@@ -40,6 +40,7 @@
 
 ;; binding C-xC-c to kill the current session of files before leaving
 (global-set-key (kbd "C-x C-c") 'kill-session-with-server-alive)
+
 ;; Dynamic library paths in Emacs 24 folder
 (setq dynamic-library-alist
       '((xpm "libXpm.dll")
