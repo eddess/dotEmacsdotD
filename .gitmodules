@@ -1,0 +1,12 @@
+[submodule "apps/web-mode"]
+	path = apps/web-mode
+	url = https://github.com/fxbois/web-mode.git
+[submodule "apps/mmm-mode"]
+	path = apps/mmm-mode
+	url = https://github.com/purcell/mmm-mode.git
+[submodule "themes/molokai"]
+	path = themes/molokai
+	url = https://github.com/hbin/molokai-theme.git
+[submodule "themes/solarized"]
+	path = themes/solarized
+	url = https://github.com/sellout/emacs-color-theme-solarized.git
