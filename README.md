@@ -1,4 +1,4 @@
 dotEmacsdotD
 ============
 
-Emacs settings (Win8.1 / OsX)
+Emacs settings (Win8.1 / OsX / Ubuntu)
