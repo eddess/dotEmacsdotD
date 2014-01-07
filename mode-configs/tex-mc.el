@@ -1,10 +1,12 @@
 ;;; Eddy Essien
-;;; Configs for dealing with web technologies
+;;; Configs for dealing with tex technologies
 
-;; function that does the loading and configuring of web-mode for php
+;; function that does the loading and configuring of AucTex
+
 (defun tex-mc-initialize ()
   (interactive)
-  (require 'tex-site "~/.emacs.d/apps/auctex/site-start.el" t)
+  (when (require 'tex-site "~/.emacs.d/apps/auctex/site-start.el" t)
+	(require 'tex-mc-auctex))
   (tex-mode))
 
 ;; Files ending in .tex
