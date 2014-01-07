@@ -1,3 +1,7 @@
+;; Start the emacs server process if not on Windows. Windows auto starts it
+(unless (string-equal system-type "windows-nt")
+  (server-start))
+
 ;; Common Lisp dependency
 (eval-when-compile (require 'cl))
 
