@@ -6,3 +6,6 @@ server/
 
 # ignore the auto saves directory
 auto-save-list/
+
+# ignore the eshell folder
+eshell/
