@@ -15,8 +15,7 @@
 	      '("~/.emacs.d/info")))
 
 ;; load packages
-(dolist (file '(myserver
-				core
+(dolist (file '(core
 				appearance
 				keymappings
 				
