@@ -9,3 +9,9 @@ auto-save-list/
 
 # ignore the eshell folder
 eshell/
+
+# ignore ido-last
+ido.last
+
+# auto-complete history
+ac-comphist.dat
