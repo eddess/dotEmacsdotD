@@ -21,10 +21,15 @@
 (setq ido-enable-flex-matching t)
 
 ;; auto-complete
-(add-to-list 'load-path "~/.emacs.d/apps/autocomplete/")
+(add-to-list 'load-path "~/.emacs.d/apps/autocomplete")
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/apps/autocomplete/ac-dict")
 (ac-config-default)
+
+;; YaSnippet
+(add-to-list 'load-path "~/.emacs.d/apps/yasnippet")
+(require 'yasnippet)
+(yas-global-mode 1)
 
 ;; package symbol
 (provide 'core)
