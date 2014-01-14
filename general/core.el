@@ -15,6 +15,11 @@
 ;; disable the bell
 (setq ring-bell-function 'ignore)
 
+;; enable IDo-mode
+(require 'ido)
+(ido-mode t)
+(setq ido-enable-flex-matching t)
+
 ;; package symbol
 (provide 'core)
 
