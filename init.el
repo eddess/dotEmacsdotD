@@ -21,5 +21,6 @@
 				
 				;; modular configs
 				php-mc
-				tex-mc))
+				tex-mc
+				c-mc))
   (require file))

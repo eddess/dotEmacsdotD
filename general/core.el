@@ -28,8 +28,8 @@
 
 ;; YaSnippet
 (add-to-list 'load-path "~/.emacs.d/apps/yasnippet")
-(require 'yasnippet)
-(yas-global-mode 1)
+;(require 'yasnippet)
+;(yas-global-mode 1)
 
 ;; package symbol
 (provide 'core)
