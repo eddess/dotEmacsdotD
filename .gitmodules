@@ -10,6 +10,3 @@
 [submodule "themes/solarized"]
 	path = themes/solarized
 	url = https://github.com/sellout/emacs-color-theme-solarized.git
-[submodule "apps/yasnippet"]
-	path = apps/yasnippet
-	url = https://github.com/capitaomorte/yasnippet.git
