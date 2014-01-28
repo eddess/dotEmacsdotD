@@ -26,10 +26,16 @@
 (add-to-list 'ac-dictionary-directories "~/.emacs.d/apps/autocomplete/ac-dict")
 (ac-config-default)
 
-;; YaSnippet
-(add-to-list 'load-path "~/.emacs.d/apps/yasnippet")
-;(require 'yasnippet)
-;(yas-global-mode 1)
+;; undo tree
+(add-to-list 'load-path "~/.emacs.d/apps/undo-tree")
+(require 'undo-tree)
+(undo-tree-mode t)
+
+;; eVil mode
+(add-to-list 'load-path "~/.emacs.d/apps/evil")
+(require 'evil)
+(evil-mode t)
+(setq-default evil-default-cursor '("white", t))
 
 ;; package symbol
 (provide 'core)
