@@ -35,7 +35,9 @@
 (add-to-list 'load-path "~/.emacs.d/apps/evil")
 (require 'evil)
 (evil-mode t)
-(setq-default evil-default-cursor '("white", t))
+(setq-default evil-default-cursor '("white" hollow))
+(setq-default evil-emacs-state-cursor '("white" box))
+(setq-default evil-default-state 'emacs)
 
 ;; package symbol
 (provide 'core)

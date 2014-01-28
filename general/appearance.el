@@ -41,5 +41,14 @@
 ;; Color theme
 (load "~/.emacs.d/themes/molokai/molokai-theme.el")
 
+;; appearance and tags of evil-mode
+(when (require 'evil "dont-force.el" t)
+  (setq evil-normal-state-tag   (propertize "< Normal >")
+      evil-emacs-state-tag    (propertize "< Emacs >")
+      evil-insert-state-tag   (propertize "< Insert >")
+      evil-motion-state-tag   (propertize "< Motion >")
+      evil-visual-state-tag   (propertize "< Visual >")
+      evil-operator-state-tag (propertize "< Operator >")))
+
 ;; package variable
 (provide 'appearance)
