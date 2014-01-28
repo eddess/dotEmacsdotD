@@ -33,13 +33,13 @@
   (tool-bar-mode 0))
 
 ;; smooth scrolling
-(setq-default mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+(setq-default mouse-wheel-scroll-amount '(2 ((shift) . 2))) ;; one line at a time
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
-(setq scroll-step 1) ;; keyboard scroll one line at a time
-
-;; package variable
-(provide 'appearance)
+(setq scroll-step 2) ;; keyboard scroll one line at a time
 
 ;; Color theme
 (load "~/.emacs.d/themes/molokai/molokai-theme.el")
+
+;; package variable
+(provide 'appearance)
