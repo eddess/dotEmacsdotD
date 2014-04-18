@@ -16,3 +16,6 @@
 [submodule "apps/undo-tree"]
 	path = apps/undo-tree
 	url = http://www.dr-qubit.org/git/undo-tree.git
+[submodule "apps/ssh-config-mode"]
+	path = apps/ssh-config-mode
+	url = https://github.com/jhgorrell/ssh-config-mode-el.git

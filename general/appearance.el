@@ -39,7 +39,7 @@
 (setq scroll-step 2) ;; keyboard scroll one line at a time
 
 ;; Color theme
-(load "~/.emacs.d/themes/molokai/molokai-theme.el")
+;(load "~/.emacs.d/themes/molokai/molokai-theme.el")
 
 ;; appearance and tags of evil-mode
 (when (require 'evil "dont-force.el" t)

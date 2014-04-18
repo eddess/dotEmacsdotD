@@ -18,8 +18,12 @@
 (dolist (file '(core
 				appearance
 				keymappings
+
+				;; utility configs
+				ssh-config
+				spell-mc
 				
-				;; modular configs
+				;; File configs
 				php-mc
 				tex-mc
 				c-mc))

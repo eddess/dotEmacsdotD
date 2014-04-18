@@ -13,10 +13,11 @@
 (add-to-list 'auto-mode-alist
 			 '("\\.tex$" . tex-mc-initialize))
 
+;; reftex hook
 (add-hook 'LaTeX-mode-hook
 		  '(lambda ()
-			 (require 'reftex)
-			 (turn-on-reftex)))
+			 (when (require 'reftex "dont-force-it" t)
+			   (turn-on-reftex))))
 
 ;; package variable
 (provide 'tex-mc)
