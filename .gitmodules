@@ -19,3 +19,18 @@
 [submodule "apps/ssh-config-mode"]
 	path = apps/ssh-config-mode
 	url = https://github.com/jhgorrell/ssh-config-mode-el.git
+[submodule "apps/yasnippet"]
+	path = apps/yasnippet
+	url = https://github.com/capitaomorte/yasnippet.git
+[submodule "apps/iedit"]
+	path = apps/iedit
+	url = https://github.com/victorhge/iedit.git
+[submodule "apps/flymake-easy"]
+	path = apps/flymake-easy
+	url = https://github.com/purcell/flymake-easy.git
+[submodule "apps/auto-complete-c-headers"]
+	path = apps/auto-complete-c-headers
+	url = https://github.com/mooz/auto-complete-c-headers.git
+[submodule "apps/flymake-google-cpplint"]
+	path = apps/flymake-google-cpplint
+	url = https://github.com/senda-akiha/flymake-google-cpplint.git
