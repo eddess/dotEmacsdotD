@@ -33,8 +33,8 @@
 (defun c-mc-cpp-settings()
   (require 'auto-complete-c-headers)
   (add-to-list 'ac-sources 'ac-source-c-headers)
-  (add-to-list 'achead:include-directories '"C:/cygwin/usr/include")
-  (add-to-list 'achead:include-directories '"C:/cygwin/lib/gcc/i686-pc-cygwin/4.8.2/include/c++")
+  (add-to-list 'achead:include-directories '"/opt/local/include")
+  (add-to-list 'achead:include-directories '"/opt/local/include/gcc49/c++")
 
   (require 'flycheck)
   (flycheck-mode))

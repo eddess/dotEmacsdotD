@@ -4,9 +4,10 @@
 ;; function that does the loading and configuring of web-mode for php
 (defun php-mc-initialize ()
   (interactive)
-  (when (require 'web-mode "~/.emacs.d/apps/web-mode/web-mode.el" t)
-	(web-mode)))
-  
+  (when (require 'web-mode)
+	(web-mode))
+  (auto-complete-mode))
+
 
 ;; php files
 (add-to-list 'auto-mode-alist

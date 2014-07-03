@@ -26,16 +26,17 @@
 (ido-mode t)
 (setq ido-enable-flex-matching t)
 
-;; yasnippet
-(require 'yasnippet)
-(yas-global-mode 1)
+;; iedit mode
+(require 'iedit)
+
+;; multiple-cursors
+(require 'multiple-cursors)
 
 ;; auto-complete
 (require 'auto-complete)
 (require 'auto-complete-config)
 (ac-config-default)
-(ac-set-trigger-key "TAB")
-(ac-set-trigger-key "<tab>")
+(ac-set-trigger-key "C-<tab>")
 
 ;; undo tree
 (require 'undo-tree)
@@ -51,7 +52,7 @@
 
 
 ;; better handling of large file scrolling
-(setq jit-lock-defer-time 0.02)
+(setq jit-lock-defer-time 0.05)
 
 ;; package symbol
 (provide 'core)

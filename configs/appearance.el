@@ -1,3 +1,4 @@
+
 (require 'core)
 
 ;; frame title
@@ -12,7 +13,7 @@
 (when window-system
   (cond
    ((string-equal system-type "windows-nt") (set-face-attribute 'default nil :font "Consolas-10"))
-   ((string-equal system-type "darwin") (set-face-attribute 'default nil :font "Menlo-12"))))
+   ((string-equal system-type "darwin") (set-face-attribute 'default nil :font "Monaco-12"))))
 
 ;; cursor
 (setq cursor-type 'bar)
@@ -36,7 +37,10 @@
 (setq-default mouse-wheel-scroll-amount '(2 ((shift) . 2))) ;; one line at a time
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
-(setq scroll-step 2) ;; keyboard scroll one line at a timez
+(setq scroll-step 2)
+
+;; molokai theme
+(require 'molokai-theme)
 
 ;; appearance and tags of evil-mode
 (when (require 'evil "dont-force.el" t)
