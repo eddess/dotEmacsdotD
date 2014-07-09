@@ -10,7 +10,7 @@
 (setq inhibit-startup-screen t)
 
 ;; font
-(when window-system
+(when (window-system)
   (cond
    ((string-equal system-type "windows-nt") (set-face-attribute 'default nil :font "Consolas-10"))
    ((string-equal system-type "darwin") (set-face-attribute 'default nil :font "Monaco-12"))))
@@ -19,9 +19,8 @@
 (setq cursor-type 'bar)
 
 ;; default window size in GUI mode
-(when window-system
-  (add-to-list 'default-frame-alist '(width . 120))
-  (add-to-list 'default-frame-alist '(height . 42)))
+(add-to-list 'default-frame-alist '(width . 120))
+(add-to-list 'default-frame-alist '(height . 42))
 
 ;; Pop up windows/frames control
 (setq pop-up-windows t)
@@ -30,8 +29,7 @@
 (column-number-mode t)
 
 ;; Disable the tool bar in GUI mode
-(when window-system
-  (tool-bar-mode 0))
+(tool-bar-mode 0)
 
 ;; smooth scrolling
 (setq-default mouse-wheel-scroll-amount '(2 ((shift) . 2))) ;; one line at a time

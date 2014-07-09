@@ -21,13 +21,33 @@
       (append Info-default-directory-list
 			  '("~/.emacs.d/info")))
 
-;; load packages
-(dolist (file '(core
-				appearance
-				keymappings
-		
-				php-mc
-				tex-mc
-				c-mc
-				spell-mc))
-  (require file))
+
+;; load packages and customizations
+(require 'core)
+(require 'appearance)
+(require 'keymappings)
+
+;; spelling configurations
+(require 'spell-mc)
+
+;; python configurations
+(require 'python-mc)
+
+
+
+;; raise frame
+(when (featurep 'ns)
+  (defun ns-raise-emacs ()
+    "Raise Emacs."
+    (ns-do-applescript "tell application \"Emacs\" to activate"))
+
+  (defun ns-raise-emacs-with-frame (frame)
+    "Raise Emacs and select the provided frame."
+    (with-selected-frame frame
+      (when (display-graphic-p)
+        (ns-raise-emacs))))
+
+  (add-hook 'after-make-frame-functions 'ns-raise-emacs-with-frame)
+
+  (when (display-graphic-p)
+    (ns-raise-emacs)))

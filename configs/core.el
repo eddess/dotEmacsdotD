@@ -45,11 +45,10 @@
 ;; eVil mode
 (setq evil-toggle-key "C-`")
 (require 'evil)
-(evil-mode t)
 (setq-default evil-default-cursor '("white" hollow))
 (setq-default evil-emacs-state-cursor '("white" box))
 (setq-default evil-default-state 'emacs)
-
+(evil-mode t)
 
 ;; better handling of large file scrolling
 (setq jit-lock-defer-time 0.05)
