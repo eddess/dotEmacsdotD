@@ -24,7 +24,6 @@
 
 ;; load packages and customizations
 (require 'core)
-(require 'appearance)
 (require 'keymappings)
 
 ;; spelling configurations
