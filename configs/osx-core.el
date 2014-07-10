@@ -1,10 +1,6 @@
-;; Bind the delete frame sequence from OSX to always delete frame if my server running
-(when (require 'myserver "dont-force.el" t)
-  (global-set-key (kbd "s-w") 'delete-this-frame))
-
-;; Bind the delete program sequence to delete all frames
-(when (require 'myserver "dont-force.el" t)
-  (global-set-key (kbd "s-q") 'delete-all-frames))
+;; fonts
+(when (window-system)
+  (set-face-attribute 'default nil :font "Monaco-12"))
 
 ;; Buffer movement
 (global-set-key (kbd "s-<left>") 'move-beginning-of-line)
@@ -20,10 +16,6 @@
 
 ;; open files with ido
 (global-set-key (kbd "s-o") 'ido-find-file)
-
-;; Send gui to front when run from the terminal
-(if (window-system)
-	(x-focus-frame nil))
 
 ;; package variable
 (provide 'osx-core)

@@ -1,8 +1,5 @@
 (require 'core)
 
-;; auto-indentation via the the return key
-(define-key global-map (kbd "RET") 'newline-and-indent)
-
 ;; default indentation
 (setq-default indent-tabs-mode t)
 (setq-default tab-width 4)

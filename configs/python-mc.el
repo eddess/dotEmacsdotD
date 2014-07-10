@@ -3,8 +3,11 @@
 (defun python-mc-settings()
   (interactive)
 
-  ;; use spaces not tabs
+  ;; use spaces not tabs in the python buffer
   (setq indent-tabs-mode nil)
+
+  ;; enable elpy
+  (elpy-enable)
   )
 
 (add-hook 'python-mode-hook
