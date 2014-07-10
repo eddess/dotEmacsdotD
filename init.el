@@ -93,6 +93,15 @@
 ;; powerline
 (require 'powerline-mc)
 
+;; interactively do things
+(require 'ido-mc)
+
+;; autocomplete
+(require 'autocomplete-mc)
+
+;; lisp configurations
+(require 'lisp-mc)
+
 ;; python configurations
 (require 'python-mc)
 
