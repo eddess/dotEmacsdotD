@@ -84,14 +84,14 @@
 
 ;; ================= 2.load packages and customizations ==================
 
+;; modeline
+(require 'modeline-mc)
+ 
 ;; color theme
-;(require 'grandshell-mc)
+(require 'molokai-mc)
 
 ;; spelling configurations
 (require 'spell-mc)
-
-;; powerline
-(require 'powerline-mc)
 
 ;; interactively do things
 (require 'ido-mc)
