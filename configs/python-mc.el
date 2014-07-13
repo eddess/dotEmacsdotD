@@ -4,6 +4,7 @@
 (require 'smart-tabs-mode)
 (require 'virtualenv)
 (require 'virtualenvwrapper)
+(require 'elpy)
 
 (defun python-mc-settings()
   (interactive)
@@ -24,9 +25,12 @@
   (flymake-mode t)
   (highlight-indentation-mode 0)
 
-  ;; enable elpy
+  ;; yasnippet
+  (yas-minor-mode t)
+
   (elpy-enable)
   )
+
 
 ;; flymake linting with pylint
 (defun flymake-pylint-init ()
@@ -35,35 +39,13 @@
 	 (local-file (file-relative-name
 		      temp-file
 		      (file-name-directory buffer-file-name))))
-    (list "epylint" (list local-file))
-    (python-virtualenv-exec
-     "pylint"
-     (list
-      ;; Pylint args. Will depend on the checker being used.
-      "-r" "n"
-      "--msg-template='{path}:{line}:{category} [{msg_id} {obj}] {msg}'"
-      local-file))))
-
-(defun python-calculate-env ()
-  "Calculate env variables for current python virtualenv."
-  (remove-if
-   (lambda (x)
-     (or
-      ;; If environment
-      (string-match " " x)
-      (not (string-match "=" x))))
-   (python-shell-calculate-process-environment)))
-
-
-(defun python-virtualenv-exec (command args)
-  "Generate a flymake friendly list executable in virtualenv, for provided commands."
-  (list "env" (append (python-calculate-env) (list command) args)))
+    (list "epylint" (list local-file))))
 
 
 ;; hooks
 (add-hook 'python-mode-hook 'python-mc-settings)
-
 (add-to-list 'flymake-allowed-file-name-masks
 	     '("\\.py\\'" flymake-pylint-init))
+
 
 (provide 'python-mc)

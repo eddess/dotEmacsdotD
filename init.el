@@ -47,7 +47,7 @@
 (setq ring-bell-function 'ignore)
 
 ;; better handling of large file scrolling
-(setq jit-lock-defer-time 0.04)
+; (setq jit-lock-defer-time 0.04)
 
 ;; frame title
 (setq frame-title-format
