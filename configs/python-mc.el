@@ -2,12 +2,13 @@
 (require 'flymake-mc)
 (require 'autocomplete-mc)
 (require 'smart-tabs-mode)
-(require 'virtualenv)
-(require 'virtualenvwrapper)
 (require 'elpy)
 
 (defun python-mc-settings()
   (interactive)
+
+    ;; elpy
+  (elpy-mode t)
 
   ;; autocomplete
   (auto-complete-mode 1)
@@ -24,11 +25,6 @@
   ;; linting with flymake
   (flymake-mode t)
   (highlight-indentation-mode 0)
-
-  ;; yasnippet
-  (yas-minor-mode t)
-
-  (elpy-enable)
   )
 
 
@@ -44,6 +40,7 @@
 
 ;; hooks
 (add-hook 'python-mode-hook 'python-mc-settings)
+
 (add-to-list 'flymake-allowed-file-name-masks
 	     '("\\.py\\'" flymake-pylint-init))
 
