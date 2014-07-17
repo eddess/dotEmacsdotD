@@ -4,11 +4,15 @@
 (require 'smart-tabs-mode)
 (require 'elpy)
 
+;; virtual env settings
+(require 'virtualenvwrapper)
+(setq venv-location "~/.virtualenvs")
+
 (defun python-mc-settings()
   (interactive)
 
     ;; elpy
-  (elpy-mode t)
+  ;(elpy-mode t)
 
   ;; autocomplete
   (auto-complete-mode 1)
