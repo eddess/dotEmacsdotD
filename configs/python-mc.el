@@ -12,7 +12,7 @@
   (interactive)
 
     ;; elpy
-  ;(elpy-mode t)
+  (elpy-mode t)
 
   ;; autocomplete
   (auto-complete-mode 1)

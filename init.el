@@ -58,7 +58,7 @@
 (setq cursor-type 'bar)
 
 ;; default window size in GUI mode
-(add-to-list 'default-frame-alist '(width . 120))
+(add-to-list 'default-frame-alist '(width . 81))
 (add-to-list 'default-frame-alist '(height . 42))
 
 ;; Pop up windows/frames control
@@ -109,7 +109,8 @@
 ;; python configurations
 (require 'python-mc)
 
-
+;; magit for git
+(require 'magit-mc)
 
 
 
