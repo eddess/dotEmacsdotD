@@ -11,11 +11,10 @@
 (defun python-mc-settings()
   (interactive)
 
-    ;; elpy
-  (elpy-mode t)
-
   ;; autocomplete
-  (auto-complete-mode 1)
+  ;;enable jedi autocompletion in python
+  (setq jedi:complete-on-dot t)
+  (jedi:setup)
 
   ;; use spaces not tabs in the python buffer
   (setq indent-tabs-mode nil)
@@ -33,20 +32,20 @@
 
 
 ;; flymake linting with pylint
-(defun flymake-pylint-init ()
+(defun flymake-linter-init ()
   (let* ((temp-file (flymake-init-create-temp-buffer-copy
 		     'flymake-create-temp-inplace))
 	 (local-file (file-relative-name
 		      temp-file
 		      (file-name-directory buffer-file-name))))
-    (list "epylint" (list local-file))))
+    (list "pycheckers" (list local-file))))
 
 
 ;; hooks
 (add-hook 'python-mode-hook 'python-mc-settings)
 
 (add-to-list 'flymake-allowed-file-name-masks
-	     '("\\.py\\'" flymake-pylint-init))
+	     '("\\.py\\'" flymake-linter-init))
 
 
 (provide 'python-mc)

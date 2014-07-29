@@ -6,6 +6,10 @@
 (setenv "PATH" test-str)
 (setq-default exec-path (append exec-path (split-string test-str ":")))
 
+(defun shell ()
+  (interactive)
+  (ansi-term "/bin/zsh"))
+
 ;; fonts
 (when (window-system)
   (set-face-attribute 'default nil :font "Monaco-12"))

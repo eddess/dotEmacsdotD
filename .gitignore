@@ -21,3 +21,6 @@ tramp
 
 # semantic database
 semanticdb/
+
+# virtualenv folder
+.python-environments/
