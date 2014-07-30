@@ -29,5 +29,8 @@
 ;; open files with ido
 (global-set-key (kbd "s-o") 'ido-find-file)
 
+;; frame title
+(setq-default frame-title-format '("" "%f " (getenv "PWD")))
+
 ;; package variable
 (provide 'osx-core)

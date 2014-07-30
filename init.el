@@ -2,6 +2,7 @@
 
 ;; disable start up splash window
 (setq inhibit-startup-screen t)
+(setq initial-scratch-message "")
 
 ;;; default directory
 (setq default-directory "~/")
@@ -56,6 +57,7 @@
 
 ;; cursor
 (setq cursor-type 'bar)
+(blink-cursor-mode 0)
 
 ;; default window size in GUI mode
 (add-to-list 'default-frame-alist '(width . 80))
@@ -70,7 +72,8 @@
 ;; Disable the tool bar in GUI mode
 (tool-bar-mode 0)
 
-;; smooth scrolling
+;; scrolling
+(scroll-bar-mode 0)
 (setq-default mouse-wheel-scroll-amount '(4 ((shift) . 4)))
 (setq mouse-wheel-progressive-speed nil)
 (setq mouse-wheel-follow-mouse 't)
@@ -84,15 +87,22 @@
 (setq-default tab-width 4)
 (setq-default tab-stop-list (number-sequence 4 160 4))
 
+;; mini window area
+(setq-default max-mini-window-height 1)
+
 
 
 ;; ================= 2.load packages and customizations ==================
+
+;; frame title
+(require 'frame-title-mc)
 
 ;; modeline
 (require 'modeline-mc)
  
 ;; color theme
-(require 'molokai-mc)
+(require 'basic-theme-mc)
+;(require 'molokai-mc)
 
 ;; spelling configurations
 (require 'spell-mc)
