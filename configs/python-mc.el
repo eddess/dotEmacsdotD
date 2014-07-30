@@ -1,8 +1,6 @@
 ;;; My settings for programming in python-mode
 (require 'flymake-mc)
 (require 'autocomplete-mc)
-(require 'smart-tabs-mode)
-(require 'elpy)
 
 ;; virtual env settings
 (require 'virtualenvwrapper)

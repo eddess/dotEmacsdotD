@@ -88,8 +88,7 @@
 (setq-default tab-stop-list (number-sequence 4 160 4))
 
 ;; mini window area
-(setq-default max-mini-window-height 1)
-
+(setq-default max-mini-window-height 2)
 
 
 ;; ================= 2.load packages and customizations ==================
