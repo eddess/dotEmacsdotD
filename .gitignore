@@ -24,3 +24,6 @@ semanticdb/
 
 # virtualenv folder
 .python-environments/
+
+# abbrevs
+abbrev_defs
