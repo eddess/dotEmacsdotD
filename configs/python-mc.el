@@ -17,9 +17,6 @@
   ;; use spaces not tabs in the python buffer
   (setq indent-tabs-mode nil)
 
-  ;; smart tabs
-  (smart-tabs-advice python-indent-line-1 python-indent)
-
   ;; tab width
   (setq tab-width 4)
 

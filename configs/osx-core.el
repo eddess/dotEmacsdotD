@@ -6,7 +6,7 @@
 (setenv "PATH" test-str)
 (setq-default exec-path (append exec-path (split-string test-str ":")))
 
-(defun shell ()
+(defun zsh_shell ()
   (interactive)
   (ansi-term "/bin/zsh"))
 

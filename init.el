@@ -121,6 +121,9 @@
 ;; magit for git
 (require 'magit-mc)
 
+;; markdown configurations
+(require 'markdown-mc)
+
 
 
 
