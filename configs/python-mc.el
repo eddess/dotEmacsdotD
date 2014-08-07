@@ -1,6 +1,7 @@
 ;;; My settings for programming in python-mode
 (require 'flymake-mc)
 (require 'autocomplete-mc)
+(require 'hs-mc)
 
 ;; virtual env settings
 (require 'virtualenvwrapper)
@@ -23,6 +24,9 @@
   ;; linting with flymake
   (flymake-mode t)
   (highlight-indentation-mode 0)
+
+  ;; hide show mode
+  (hs-minor-mode t)
   )
 
 
