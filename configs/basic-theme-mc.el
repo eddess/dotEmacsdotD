@@ -60,7 +60,6 @@
 
    ;; ansi term colors
    `(term-color-black ((t (:foreground ,bt-bg :weight Bold))))
-
    `(term-color-red ((t (:foreground ,bt-red :weight Bold))))
    `(term-color-green ((t (:foreground ,bt-green :weight Bold))))
    `(term-color-yellow ((t (:foreground ,bt-yellow :weight Bold))))
