@@ -2,21 +2,21 @@
 
 (let ((bt-blue "#3535AE")
 
-	  (bt-red "#963232")
+	  (bt-red "#940000")
 	  
       (bt-gray "#909090")
 	  (bt-gray-lightest "#E0E0E0")
 	  (bt-gray-light "#C9C9C9")
 	  
-	  (bt-green "#326432")
+	  (bt-green "#004000")
       
       (bt-magenta "#9C2073")
 
-	  (bt-purple "#4F306B")
+	  (bt-purple "#3B006F")
 
-	  (bt-yellow "#A26136")
+	  (bt-yellow "#7A3100")
 
-	  (bt-cyan "#156B6B")
+	  (bt-cyan "#006565")
 
 	  (bt-white "#FFFFFF")
 
