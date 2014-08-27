@@ -108,6 +108,7 @@
 
 ;; interactively do things
 (require 'ido-mc)
+(require 'project-mc)
 
 ;; autocomplete
 (require 'autocomplete-mc)
