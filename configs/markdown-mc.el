@@ -1,5 +1,5 @@
 ;;; Configurations for editing markdown files
-(require 'markdown-mode)
+(ensure-installed 'markdown-mode)
 
 ;; There isn't an official markdown extension so modify as needed
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))

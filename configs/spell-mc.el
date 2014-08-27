@@ -3,7 +3,7 @@
 (setq ispell-personal-dictionary "~/.spell_dict")
 (setq flyspell-issue-message-flag nil)
 (setq ispell-list-command "--list")
-(require 'ispell)
+(ensure-installed 'ispell)
 
 ;; keybindings
 (global-set-key (kbd "<f8>") 'ispell-word)

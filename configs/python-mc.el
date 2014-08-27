@@ -4,7 +4,7 @@
 (require 'hs-mc)
 
 ;; virtual env settings
-(require 'virtualenvwrapper)
+(ensure-installed 'virtualenvwrapper)
 (setq venv-location "~/.virtualenvs")
 
 (defun python-mc-settings()

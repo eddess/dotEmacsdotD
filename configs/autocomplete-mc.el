@@ -1,6 +1,5 @@
 ;; auto-complete
-(require 'auto-complete)
-(require 'auto-complete-config)
+(ensure-installed 'auto-complete 'auto-complete-config)
 (ac-set-trigger-key "C-<tab>")
 
 

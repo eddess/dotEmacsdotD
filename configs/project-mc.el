@@ -1,6 +1,4 @@
-(require 'projectile)
-(require 'helm-projectile)
-(require 'flx-ido)
+(ensure-installed 'projectile 'helm-projectile 'flx-ido)
 
 (flx-ido-mode 1)
 ;; disable ido faces to see flx highlights.

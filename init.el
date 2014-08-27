@@ -90,6 +90,16 @@
 ;; mini window area
 (setq-default max-mini-window-height 2)
 
+;; ensure packages
+(defun ensure-installed (&rest packages)
+  " Ensure packages are installed "
+  (while packages
+    (setq p (pop packages))
+    (if (not (package-installed-p p))
+	(lambda ()
+	  (message "Ensuring %s" p)
+	  (package-install p)))))
+
 
 ;; ================= 2.load packages and customizations ==================
 

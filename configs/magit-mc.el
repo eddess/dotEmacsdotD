@@ -1,3 +1,3 @@
-(require 'magit)
+(ensure-installed 'magit)
 
 (provide 'magit-mc)
