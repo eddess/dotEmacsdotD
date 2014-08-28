@@ -14,7 +14,7 @@
 		(zlib "zlib.dll")))
 
 ;; understand cygwin paths
-(require 'cygwin-mount)
+(ensure-installed 'cygwin-mount)
 
 ;; font
 (when (window-system)

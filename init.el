@@ -16,6 +16,18 @@
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 (package-initialize)
+;; ensure packages
+(defun ensure-installed (&rest packages)
+  " Ensure packages are installed "
+  (if (not (file-directory-p "~/.emacs.d/elpa"))
+      (package-refresh-contents))
+  (while packages
+    (setq p (pop packages))
+    (if (not (package-installed-p p))
+	(progn
+	  (message "Ensuring %s" p)
+	  (package-install p)))))
+
 
 ;; load path
 (add-to-list 'load-path "~/.emacs.d/configs")
@@ -89,17 +101,6 @@
 
 ;; mini window area
 (setq-default max-mini-window-height 2)
-
-;; ensure packages
-(defun ensure-installed (&rest packages)
-  " Ensure packages are installed "
-  (while packages
-    (setq p (pop packages))
-    (if (not (package-installed-p p))
-	(lambda ()
-	  (message "Ensuring %s" p)
-	  (package-install p)))))
-
 
 ;; ================= 2.load packages and customizations ==================
 
