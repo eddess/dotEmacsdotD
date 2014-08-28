@@ -130,6 +130,9 @@
 ;; python configurations
 (require 'python-mc)
 
+;; ruby configurations
+(require 'ruby-mc)
+
 ;; magit for git
 (require 'magit-mc)
 
