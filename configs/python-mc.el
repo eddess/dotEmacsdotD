@@ -4,7 +4,7 @@
 (require 'hs-mc)
 
 ;; virtual env settings
-(ensure-installed 'virtualenvwrapper)
+(ensure-installed 'virtualenvwrapper 'jedi)
 (setq venv-location "~/.virtualenvs")
 
 (defun python-mc-settings()
@@ -23,7 +23,6 @@
 
   ;; linting with flymake
   (flymake-mode t)
-  (highlight-indentation-mode 0)
 
   ;; hide show mode
   (hs-minor-mode t)
