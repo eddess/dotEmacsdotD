@@ -102,6 +102,9 @@
 ;; mini window area
 (setq-default max-mini-window-height 2)
 
+;; delete trailing white space on save
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 ;; ================= 2.load packages and customizations ==================
 
 ;; frame title
