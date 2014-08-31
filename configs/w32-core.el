@@ -16,6 +16,9 @@
 ;; understand cygwin paths
 (ensure-installed 'cygwin-mount)
 
+;; no menu bar
+(menu-bar-mode 0)
+
 ;; font
 (when (window-system)
   (set-face-attribute 'default nil :font "Consolas-10"))

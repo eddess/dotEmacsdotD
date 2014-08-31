@@ -54,7 +54,8 @@
    `(font-lock-warning-face ((t (:bold t :foreground ,bt-brown))))
 
    ; modeline
-   `(mode-line ((t (:box (:line-width 1 :color ,bt-gray-light :style none) :foreground ,bt-fg :background ,bt-gray-lightest))))
+   `(mode-line ((t (:box (:line-width 1 :color ,bt-gray-light :style none)
+						 :foreground ,bt-fg :background ,bt-gray-lightest))))
 
    ;; IDO
    `(ido-first-match ((t (:foreground ,bt-purple :weight Bold))))
