@@ -30,10 +30,6 @@
 
 	  (bt-bg "#FFFFFF"))
 
-  ;; modeline colors
-  (set-face-foreground 'mode-line bt-fg)
-  (set-face-background 'mode-line bt-gray-lightest)
-
   ;; Set the color of the fringe
   (custom-set-faces
    ;; Fringe
@@ -45,7 +41,7 @@
    `(minibuffer-prompt ((t (:foreground ,bt-blue :weight Bold))))
    `(region ((t (:background ,bt-gray-lightest))))
 
-   ;; Main
+   ;; Font lock
    `(font-lock-builtin-face ((t (:foreground ,bt-green :weight Bold))))
    `(font-lock-comment-face ((t (:foreground ,bt-gray))))
    `(font-lock-constant-face ((t (:foreground ,bt-brown))))
@@ -56,6 +52,9 @@
    `(font-lock-type-face ((t (:foreground ,bt-blue))))
    `(font-lock-variable-name-face ((t (:foreground ,bt-magenta))))
    `(font-lock-warning-face ((t (:bold t :foreground ,bt-brown))))
+
+   ; modeline
+   `(mode-line ((t (:box (:line-width 1 :color ,bt-gray-light :style none) :foreground ,bt-fg :background ,bt-gray-lightest))))
 
    ;; IDO
    `(ido-first-match ((t (:foreground ,bt-purple :weight Bold))))
