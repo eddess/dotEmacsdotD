@@ -20,7 +20,7 @@
 	  (bt-orange-warning "#FF9100")
 
 	  (bt-cyan "#006565")
-	  (bt-cyan-info "#16E9E9")
+	  (bt-cyan-info "#1B9393")
 
 	  (bt-white "#FFFFFF")
 

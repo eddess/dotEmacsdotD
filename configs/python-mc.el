@@ -1,10 +1,9 @@
 ;;; My settings for programming in python-mode
-(require 'flymake-mc)
 (require 'autocomplete-mc)
 (require 'hs-mc)
 
 ;; virtual env settings
-(ensure-installed 'virtualenvwrapper 'jedi)
+(ensure-installed 'virtualenvwrapper 'jedi 'flycheck)
 (setq venv-location "~/.virtualenvs")
 
 (defun python-mc-settings()
@@ -22,28 +21,16 @@
   (setq tab-width 4)
 
   ;; linting with flymake
-  (flymake-mode t)
+  (flycheck-mode t)
 
   ;; hide show mode
   (hs-minor-mode t)
   )
 
-
-;; flymake linting with pylint
-(defun flymake-linter-init ()
-  (let* ((temp-file (flymake-init-create-temp-buffer-copy
-		     'flymake-create-temp-inplace))
-	 (local-file (file-relative-name
-		      temp-file
-		      (file-name-directory buffer-file-name))))
-    (list "pycheckers" (list local-file))))
-
+;; Flycheck custom linter
+(setq-default flycheck-python-pylint-executable "pycheckers")
 
 ;; hooks
 (add-hook 'python-mode-hook 'python-mc-settings)
-
-(add-to-list 'flymake-allowed-file-name-masks
-	     '("\\.py\\'" flymake-linter-init))
-
 
 (provide 'python-mc)

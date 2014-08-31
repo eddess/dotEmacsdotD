@@ -107,12 +107,12 @@
 
 ;; ================= 2.load packages and customizations ==================
 
-;; frame title
-(require 'frame-title-mc)
+;; frames
+(require 'frame-mc)
 
 ;; modeline
 (require 'modeline-mc)
- 
+
 ;; color theme
 (require 'basic-theme-mc)
 ;(require 'molokai-mc)

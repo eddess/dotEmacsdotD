@@ -1,4 +1,4 @@
-;; frame title
+;; frame
 (setq-default frame-title-format '("%b"))
 
-(provide 'frame-title-mc)
+(provide 'frame-mc)
