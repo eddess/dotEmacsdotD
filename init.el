@@ -19,14 +19,17 @@
 ;; ensure packages
 (defun ensure-installed (&rest packages)
   " Ensure packages are installed "
-  (if (not (file-directory-p "~/.emacs.d/elpa"))
-      (package-refresh-contents))
+  (if (not (file-exists-p "~/.emacs.d/elpa-download.txt"))
+	  (progn
+	   (package-refresh-contents)
+	   (with-temp-file "~/.emacs.d/elpa-download.txt"
+		 (insert "downloaded"))))
   (while packages
     (setq p (pop packages))
     (if (not (package-installed-p p))
-	(progn
-	  (message "Ensuring %s" p)
-	  (package-install p)))))
+		(progn
+		  (message "Ensuring %s" p)
+		  (package-install p)))))
 
 
 ;; load path
@@ -162,3 +165,9 @@
 
   (when (display-graphic-p)
     (ns-raise-emacs)))
+
+
+;; ================== 4. Post ==================
+;; clean package install file
+(if (file-exists-p "~/.emacs.d/elpa-download.txt")
+	(delete-file "~/.emacs.d/elpa-download.txt"))
