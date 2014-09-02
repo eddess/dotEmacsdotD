@@ -15,7 +15,7 @@
 
 	  (bt-purple "#3B006F")
 
-	  (bt-brown "#7A3100")
+	  (bt-brown "#B75413")
 
 	  (bt-orange-warning "#FF9100")
 
