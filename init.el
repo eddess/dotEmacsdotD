@@ -85,7 +85,7 @@
 (column-number-mode t)
 
 ;; Disable the tool bar in GUI mode
-(if (display-graphic-p nil)
+(if (display-graphic-p)
 	(tool-bar-mode 0))
 
 ;; disable menu-bar for non-display windows
