@@ -85,12 +85,7 @@
 (column-number-mode t)
 
 ;; Disable the tool bar in GUI mode
-(if (display-graphic-p)
-	(tool-bar-mode 0))
-
-;; disable menu-bar for non-display windows
-(unless (display-graphic-p nil)
-  (menu-bar-mode 0))
+(tool-bar-mode 0)
 
 ;; scrolling
 (scroll-bar-mode 0)
