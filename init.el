@@ -85,7 +85,12 @@
 (column-number-mode t)
 
 ;; Disable the tool bar in GUI mode
-(tool-bar-mode 0)
+(if (display-graphic-p nil)
+	(tool-bar-mode 0))
+
+;; disable menu-bar for non-display windows
+(unless (display-graphic-p nil)
+  (menu-bar-mode 0))
 
 ;; scrolling
 (scroll-bar-mode 0)
@@ -145,7 +150,8 @@
 ;; markdown configurations
 (require 'markdown-mc)
 
-
+;; tramp configuration
+(require 'tramp-mc)
 
 
 ;; =================== 3.hacks ==================
