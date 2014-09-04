@@ -21,6 +21,7 @@
   (setq tab-width 4)
 
   ;; linting with flymake
+  (flycheck-select-checker 'python-pylint)
   (flycheck-mode t)
 
   ;; hide show mode

@@ -44,6 +44,7 @@
 ;; disable autosaves and backups. This ain't 197-something anymore
 (setq-default backup-inhibited t)
 (setq-default auto-save-default nil)
+(setq create-lockfiles nil)
 
 ;; yes-or-no bound to y-or-n
 (defalias 'yes-or-no-p 'y-or-n-p)
@@ -145,7 +146,8 @@
 ;; markdown configurations
 (require 'markdown-mc)
 
-
+;; tramp configuration
+(require 'tramp-mc)
 
 
 ;; =================== 3.hacks ==================
