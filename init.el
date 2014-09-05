@@ -19,18 +19,17 @@
 ;; ensure packages
 (defun ensure-installed (&rest packages)
   " Ensure packages are installed "
-  (if (not (file-exists-p "~/.emacs.d/elpa-download.txt"))
-	  (progn
-	   (package-refresh-contents)
-	   (with-temp-file "~/.emacs.d/elpa-download.txt"
-		 (insert "downloaded"))))
   (while packages
     (setq p (pop packages))
     (if (not (package-installed-p p))
 		(progn
+		  (if (not (file-exists-p "~/.emacs.d/elpa-download.txt"))
+			  (progn
+				(package-refresh-contents)
+				(with-temp-file "~/.emacs.d/elpa-download.txt"
+				  (insert "downloaded"))))
 		  (message "Ensuring %s" p)
 		  (package-install p)))))
-
 
 ;; load path
 (add-to-list 'load-path "~/.emacs.d/configs")
@@ -109,6 +108,12 @@
 ;; delete trailing white space on save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; z shell
+;; use zsh for shell
+(setq-default shell-file-name "zsh")
+(setq-default explicit-shell-file-name shell-file-name)
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+
 ;; ================= 2.load packages and customizations ==================
 
 ;; frames
@@ -145,9 +150,6 @@
 
 ;; markdown configurations
 (require 'markdown-mc)
-
-;; tramp configuration
-(require 'tramp-mc)
 
 
 ;; =================== 3.hacks ==================
