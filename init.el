@@ -133,9 +133,6 @@
 (require 'ido-mc)
 (require 'project-mc)
 
-;; autocomplete
-(require 'autocomplete-mc)
-
 ;; lisp configurations
 (require 'lisp-mc)
 
@@ -151,6 +148,11 @@
 ;; markdown configurations
 (require 'markdown-mc)
 
+;; Golang mode
+(require 'go-mc)
+
+;; autocomplete
+(require 'autocomplete-mc)
 
 ;; =================== 3.hacks ==================
 ;; raise frame on OsX
