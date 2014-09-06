@@ -6,16 +6,15 @@
 (ensure-installed 'virtualenvwrapper 'flycheck)
 (setq venv-location "~/.virtualenvs")
 
-;; autocomplete
-(delete 'company-backends 'company-ropemacs)
-(add-to-list 'company-backends 'company-anaconda)
-(add-to-list 'company-backends 'company-capf)
 
 (defun python-mc-settings()
   (interactive)
 
   ;; completion
+  (delete 'company-backends 'company-ropemacs)
   (anaconda-mode t)
+  (add-to-list 'company-backends 'company-anaconda)
+  (add-to-list 'company-backends 'company-capf)
   (company-mode t)
 
   ;; use spaces not tabs in the python buffer
