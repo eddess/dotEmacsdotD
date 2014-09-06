@@ -1,11 +1,8 @@
 (ensure-installed 'go-mode 'company-go)
 
-(add-to-list 'load-path
-			 (format "%s/%s"
-					 (getenv "GOPATH")
-					 "src/github.com/dougm/goflymake"))
-
-(require 'go-flycheck)
+(require 'go-flycheck (format "%s/%s"
+							  (getenv "GOPATH")
+							  "src/github.com/dougm/goflymake") t)
 
 (defun go-mc-settings()
   (interactive)

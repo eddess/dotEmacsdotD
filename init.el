@@ -152,7 +152,7 @@
 (require 'go-mc)
 
 ;; autocomplete
-(require 'autocomplete-mc)
+(require 'completion-mc)
 
 ;; =================== 3.hacks ==================
 ;; raise frame on OsX

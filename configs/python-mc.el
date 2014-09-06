@@ -1,18 +1,22 @@
 ;;; My settings for programming in python-mode
-(require 'autocomplete-mc)
+(ensure-installed 'company-anaconda 'anaconda-mode)
 (require 'hs-mc)
 
 ;; virtual env settings
-(ensure-installed 'virtualenvwrapper 'jedi 'flycheck)
+(ensure-installed 'virtualenvwrapper 'flycheck)
 (setq venv-location "~/.virtualenvs")
+
+;; autocomplete
+(delete 'company-backends 'company-ropemacs)
+(add-to-list 'company-backends 'company-anaconda)
+(add-to-list 'company-backends 'company-capf)
 
 (defun python-mc-settings()
   (interactive)
 
-  ;; autocomplete
-  ;;enable jedi autocompletion in python
-  (setq jedi:complete-on-dot t)
-  (jedi:setup)
+  ;; completion
+  (anaconda-mode t)
+  (company-mode t)
 
   ;; use spaces not tabs in the python buffer
   (setq indent-tabs-mode nil)
@@ -21,8 +25,8 @@
   (setq tab-width 4)
 
   ;; linting with flymake
-  (flycheck-select-checker 'python-pylint)
   (flycheck-mode t)
+  (flycheck-select-checker 'python-pylint)
 
   ;; hide show mode
   (hs-minor-mode t)
