@@ -11,7 +11,7 @@
   (interactive)
 
   ;; completion
-  (delete 'company-backends 'company-ropemacs)
+  (delete 'company-ropemacs company-backends)
   (anaconda-mode t)
   (add-to-list 'company-backends 'company-anaconda)
   (add-to-list 'company-backends 'company-capf)

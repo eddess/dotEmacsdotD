@@ -14,7 +14,8 @@
 		(zlib "zlib.dll")))
 
 ;; understand cygwin paths
-(ensure-installed 'cygwin-mount)
+(require 'cygwin-mount)
+(cygwin-mount-activate)
 
 ;; no menu bar
 (menu-bar-mode 0)

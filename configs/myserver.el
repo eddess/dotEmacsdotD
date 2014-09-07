@@ -1,6 +1,6 @@
 ;; Start the emacs server process if not on Windows. Windows auto starts it
-(unless (string-equal system-type "windows-nt")
-  (server-start))
+;(unless (string-equal system-type "windows-nt")
+(server-start)
 
 ;; Common Lisp dependency
 (eval-when-compile (require 'cl))
@@ -17,7 +17,7 @@
 (defun delete-this-frame ()
   (interactive)
   (delete-a-frame (selected-frame)))
-  
+
 ;; delete every frame
 (defun delete-all-frames ()
   (interactive)
