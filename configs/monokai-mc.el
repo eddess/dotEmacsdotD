@@ -1,4 +1,6 @@
-(require 'monokai-theme)
+(ensure-installed 'monokai-theme)
+
+(load-theme 'monokai)
 
 ;; modeline colors
 ;(custom-set-faces
