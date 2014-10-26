@@ -85,6 +85,8 @@
 
 ;; Disable the tool bar in GUI mode
 (tool-bar-mode 0)
+(setq initial-frame-alist
+	  '((tool-bar-lines . 0)))
 
 ;; scrolling
 (scroll-bar-mode 0)
@@ -122,8 +124,8 @@
 (require 'modeline-mc)
 
 ;; color theme
-(require 'basic-theme-mc)
-;(require 'molokai-mc)
+; (require 'basic-theme-mc)
+(require 'monokai-mc)
 
 ;; spelling configurations
 (require 'spell-mc)

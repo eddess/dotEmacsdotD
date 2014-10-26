@@ -16,11 +16,18 @@
 (global-set-key (kbd "s-<up>") 'beginning-of-buffer)
 (global-set-key (kbd "s-<down>") 'end-of-buffer)
 
-;; better buffer and frame switching
-(global-set-key (kbd "C-s-<left>") 'previous-buffer)
-(global-set-key (kbd "C-s-<right>") 'next-buffer)
-(global-set-key (kbd "C-s-<up>") 'ns-prev-frame)
-(global-set-key (kbd "C-s-<down>") 'ns-next-frame)
+;; window and frame management
+(require 'frame-mc)
+(global-set-key (kbd "C-s-<up>") 'windmove-up)
+(global-set-key (kbd "C-s-<down>") 'windmove-down)
+(global-set-key (kbd "C-s-<left>") 'windmove-left)
+(global-set-key (kbd "C-s-<right>") 'windmove-right)
+
+(global-set-key (kbd "C-s-<268632065>") 'frame-mc-add-window-horizontally)
+(global-set-key (kbd "C-s-<268632075>") 'frame-mc-delete-window-horizontally)
+
+(global-set-key (kbd "C-M-s-<left>") 'ns-prev-frame)
+(global-set-key (kbd "C-M-s-<right>") 'ns-next-frame)
 
 ;; open files with ido
 (global-set-key (kbd "s-o") 'ido-find-file)
