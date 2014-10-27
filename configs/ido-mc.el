@@ -7,4 +7,7 @@
 ; side some extensions
 (setq ido-ignore-files '("*.pyc" ".exe"))
 
+;; open files with ido
+(global-set-key (kbd "s-o") 'ido-find-file)
+
 (provide 'ido-mc)

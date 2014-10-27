@@ -16,9 +16,6 @@
 (global-set-key (kbd "s-<up>") 'beginning-of-buffer)
 (global-set-key (kbd "s-<down>") 'end-of-buffer)
 
-;; open files with ido
-(global-set-key (kbd "s-o") 'ido-find-file)
-
 ;; frame title
 (setq-default frame-title-format '("" "%f " (getenv "PWD")))
 

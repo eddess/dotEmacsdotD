@@ -20,6 +20,16 @@
 ;; no menu bar
 (menu-bar-mode 0)
 
+;; make PC keyboard's Win key or other to type Super or Hyper, for emacs running on Windows.
+(setq w32-pass-lwindow-to-system nil)
+(setq w32-lwindow-modifier 'super) ; Left Windows key
+
+(setq w32-pass-rwindow-to-system nil)
+(setq w32-rwindow-modifier 'super) ; Right Windows key
+
+(setq w32-pass-apps-to-system nil)
+(setq w32-apps-modifier 'hyper) ; Menu/App key
+
 ;; font
 (when (window-system)
   (set-face-attribute 'default nil :font "Consolas-10"))
