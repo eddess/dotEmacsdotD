@@ -30,3 +30,6 @@ semanticdb/
 
 # abbrevs
 abbrev_defs
+
+# projectile emacs
+projectile*

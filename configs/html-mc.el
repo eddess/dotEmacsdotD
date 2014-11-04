@@ -1,19 +1,17 @@
 ;;; Eddy Essien
 ;;; Configs for dealing with web technologies
 
-(ensure-installed 'web-mode)
 (require 'completion-mc)
 
 ;; function that does the loading and configuring of web-mode for php
-(defun php-mc-initialize ()
+(defun html-mc-initialize ()
   (interactive)
   (web-mode)
-  (auto-complete-mode))
+  (company-mode t))
 
 
-;; php files
 (add-to-list 'auto-mode-alist
-	     '("\\.php\\'" . php-mc-initialize))
+	     '("\\.html\\'" . html-mc-initialize))
 
 ;; package variable
-(provide 'php-mc)
+(provide 'html-mc)

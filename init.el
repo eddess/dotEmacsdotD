@@ -124,8 +124,8 @@
 (require 'modeline-mc)
 
 ;; color theme
-; (require 'basic-theme-mc)
-(require 'monokai-mc)
+(require 'basic-theme-mc)
+;(require 'monokai-mc)
 
 ;; spelling configurations
 (require 'spell-mc)
@@ -154,6 +154,10 @@
 
 ;; autocomplete
 (require 'completion-mc)
+
+
+;; Html files
+(require 'html-mc)
 
 ;; =================== 3.hacks ==================
 ;; raise frame on OsX
