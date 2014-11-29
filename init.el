@@ -75,7 +75,7 @@
 
 ;; default window size in GUI mode
 (add-to-list 'default-frame-alist '(width . 79))
-(add-to-list 'default-frame-alist '(height . 52))
+(add-to-list 'default-frame-alist '(height . 60))
 
 ;; Pop up windows/frames control
 (setq pop-up-windows t)
@@ -117,21 +117,28 @@
 
 ;; ================= 2.load packages and customizations ==================
 
+;; history
+(require 'history-mc)
+
 ;; frames
 (require 'frame-mc)
 
 ;; modeline
-(require 'modeline-mc)
+ (require 'modeline-mc)
 
 ;; color theme
-(require 'basic-theme-mc)
-;(require 'monokai-mc)
+(require 'dark-theme-mc)
+
+;; EVIL mode
+;(require 'evil-mc)
 
 ;; spelling configurations
 (require 'spell-mc)
 
 ;; interactively do things
 (require 'ido-mc)
+
+;; project configuration
 (require 'project-mc)
 
 ;; lisp configurations
@@ -154,7 +161,6 @@
 
 ;; autocomplete
 (require 'completion-mc)
-
 
 ;; Html files
 (require 'html-mc)

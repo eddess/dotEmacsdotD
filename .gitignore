@@ -33,3 +33,7 @@ abbrev_defs
 
 # projectile emacs
 projectile*
+
+# history files
+savehist
+recentf

@@ -82,4 +82,4 @@
 
 
 
-(provide 'basic-theme-mc)
+(provide 'light-theme-mc)

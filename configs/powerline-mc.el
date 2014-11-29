@@ -1,10 +1,10 @@
 ;;; configurations for powerline
 
 (require 'cl)
-(require 'powerline)
+(ensure-installed 'powerline)
 
 ;; powerline arrow shape: arrow, curve or arrow14
-(setq powerline-arrow-shape 'slant-left)
+(setq powerline-arrow-shape 'arrow14)
 
 ;; turn on powerline
 (powerline-default-theme)
