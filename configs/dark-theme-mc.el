@@ -1,30 +1,30 @@
 ;;; Configurations for default theme
 
 (let (
-	  (bt-blue "#A9D0F5")
+	  (bt-blue "#89ABCA")
 
-	  (bt-red "#F78181")
+	  (bt-red "#C66363")
 	  (bt-red-error "#E90000")
 
-      (bt-gray "#707070")
-	  (bt-gray-lightest "#E0E0E0")
-	  (bt-gray-light "#C9C9C9")
+      (bt-gray "#505050")
+	  (bt-gray-lightest "#707070")
+	  (bt-gray-light "#909090")
 
-	  (bt-green "#A9F5A9")
+	  (bt-green "#7CBC7C")
 
-      (bt-magenta "#E2A9F3")
+      (bt-magenta "#B47FC4")
 
-	  (bt-purple "#BCA9F5")
+	  (bt-purple "#8D7EBC")
 
-	  (bt-yellow "#F5DA81")
+	  (bt-yellow "#CCAA66")
 
 	  (bt-orange-warning "#FF9100")
 
-	  (bt-cyan "#81F7F3")
+	  (bt-cyan "#5CBAB6")
 	  (bt-cyan-info "#81F7F3")
 
 	  (bt-bg "#222")
-	  (bt-fg "#FFFFFF"))
+	  (bt-fg "#CCC"))
 
   ;; Set the color of the fringe
   (custom-set-faces
@@ -39,7 +39,7 @@
 
    ;; Font lock
    `(font-lock-builtin-face ((t (:foreground ,bt-red))))
-   `(font-lock-comment-face ((t (:foreground ,bt-gray))))
+   `(font-lock-comment-face ((t (:foreground ,bt-gray-light))))
    `(font-lock-constant-face ((t (:foreground ,bt-yellow))))
    `(font-lock-doc-face ((t (:foreground ,bt-gray-light))))
    `(font-lock-function-name-face ((t (:foreground ,bt-green))))
@@ -78,7 +78,7 @@
    `(company-tooltip ((t (:background ,bt-gray-lightest :foreground ,bt-bg))))
    `(company-tooltip-selection ((t (:background ,bt-yellow :foreground ,bt-bg))))
    `(company-tooltip-mouse ((t (:background ,bt-green))))
-   `(company-preview-common ((t (:foreground ,bt-cyan-info))))
+   `(company-preview-common ((t (:foreground ,bt-cyan))))
 
    ;; Magit
    `(magit-section-title ((t (:underline t :foreground ,bt-cyan))))

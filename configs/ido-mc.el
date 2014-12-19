@@ -5,7 +5,15 @@
 (setq-default ido-auto-merge-work-directories-length -1)
 (flx-ido-mode 1)
 
-; side some extensions
+;; ido bookmarks
+(global-set-key
+ (kbd "C-x r b")
+ (lambda ()
+   (interactive)
+   (bookmark-jump
+	(ido-completing-read "Jump to bookmark: " (bookmark-all-names)))))
+
+;; hide some extensions
 (setq ido-ignore-files '("*.pyc" ".exe"))
 
 (provide 'ido-mc)
