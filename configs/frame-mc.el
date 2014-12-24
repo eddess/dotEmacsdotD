@@ -1,22 +1,23 @@
 ;; frame
-(ensure-installed 'frame-cmds)
+(package-install 'frame-cmds)
 (setq-default frame-title-format '("%b"))
 
-(defun frame-mc-add-window-horizontally ()
-  ;; add a window to the current frame with current window width
+;; Toggle between split windows and a single window
+(defun toggle-windows-split()
   (interactive)
-  (enlarge-frame-horizontally (+ (window-width) 4))
-  (split-window-right)
-  (balance-windows)
-  (other-window 0))
+  (if (not (window-minibuffer-p (selected-window)))
+      (progn
+        (if (< 1 (count-windows))
+            (progn
+              (window-configuration-to-register ?u)
+              (delete-other-windows))
+          (jump-to-register ?u))))
+  (my-iswitchb-close))
 
-(defun frame-mc-delete-window-horizontally ()
-  ;; remove a window and resize frame accordingly
-  (interactive)
-  (setq wwidth (window-width))
-  (delete-window)
-  (enlarge-frame-horizontally (* -1 (+ wwidth 4)))
-  (balance-windows))
+(defun my-iswitchb-close()
+ (interactive)
+ (if (window-minibuffer-p (selected-window))
+	 (keyboard-escape-quit)))
 
 
 (global-set-key (kbd "C-s-<up>") 'windmove-up)
@@ -24,15 +25,6 @@
 (global-set-key (kbd "C-s-<left>") 'windmove-left)
 (global-set-key (kbd "C-s-<right>") 'windmove-right)
 
-;; OsX
-(global-set-key (kbd "C-s-<268632065>") 'frame-mc-add-window-horizontally)
-(global-set-key (kbd "C-s-<268632075>") 'frame-mc-delete-window-horizontally)
-
-;; Windows (and linux?)
-(global-set-key (kbd "C-s-a") 'frame-mc-add-window-horizontally)
-(global-set-key (kbd "C-s-k") 'frame-mc-delete-window-horizontally)
-
-(global-set-key (kbd "C-M-s-<left>") 'ns-prev-frame)
-(global-set-key (kbd "C-M-s-<right>") 'ns-next-frame)
+(define-key global-map (kbd "C-|") 'toggle-windows-split)
 
 (provide 'frame-mc)

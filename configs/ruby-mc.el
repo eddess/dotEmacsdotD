@@ -1,3 +1,3 @@
-(ensure-installed 'puppet-mode)
+(package-install 'puppet-mode)
 
 (provide 'ruby-mc)

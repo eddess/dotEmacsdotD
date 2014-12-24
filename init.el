@@ -1,3 +1,8 @@
+;; ===================== 0. Personal =================
+(setq user-full-name "Eddy Essien"
+	  user-mail-address "eddy.essien@gmail.com"
+	  user-work-address "eessien@coverity.com")
+
 ;; ===================== 1.Core =======================
 
 ;; disable start up splash window
@@ -57,7 +62,7 @@
 (cond
  ((string-equal system-type "windows-nt")(require 'w32-core))
  ((string-equal system-type "darwin")(require 'osx-core)))
-
+em
 ;; disable the bell
 (setq ring-bell-function 'ignore)
 
@@ -115,6 +120,12 @@
 (setq-default explicit-shell-file-name shell-file-name)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
+;; winner mode for those popup windows I don't want to keep (C-c left or right)
+(winner-mode 1)
+
+;; sentences end with a single space
+(setq sentence-end-double-space nil)
+
 ;; ================= 2.load packages and customizations ==================
 
 ;; history
@@ -127,13 +138,10 @@
 (require 'modeline-mc)
 
 ;; color theme
-(require 'dark-theme-mc)
+(require 'light-theme-mc)
 
 ;; EVIL mode
 ;(require 'evil-mc)
-
-;; spelling configurations
-(require 'spell-mc)
 
 ;; interactively do things
 (require 'ido-mc)
