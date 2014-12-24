@@ -138,6 +138,9 @@
 ;; interactively do things
 (require 'ido-mc)
 
+;; Smart M-x
+(require 'smex-mc)
+
 ;; project configuration
 (require 'project-mc)
 

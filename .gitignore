@@ -38,3 +38,6 @@ projectile*
 savehist
 recentf
 bookmarks
+
+# smex items
+smex-items
