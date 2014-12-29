@@ -16,4 +16,4 @@
 ;; hide some extensions
 (setq ido-ignore-files '("*.pyc" ".exe"))
 
-(provide 'ido-mc)
+(provide 'interactive-mc)

@@ -20,6 +20,9 @@
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 (package-initialize)
+(package-install 'use-package)
+(require 'use-package)
+
 ;; ensure packages
 (defun ensure-installed (&rest packages)
   " Ensure packages are installed "
@@ -62,12 +65,12 @@
 (cond
  ((string-equal system-type "windows-nt")(require 'w32-core))
  ((string-equal system-type "darwin")(require 'osx-core)))
-em
+
 ;; disable the bell
 (setq ring-bell-function 'ignore)
 
 ;; better handling of large file scrolling
-(setq jit-lock-defer-time 0.04)
+(setq jit-lock-defer-time 0.02)
 
 ;; frame title
 (setq frame-title-format
@@ -126,6 +129,11 @@ em
 ;; sentences end with a single space
 (setq sentence-end-double-space nil)
 
+;; UTF-8
+(prefer-coding-system 'utf-8)
+(when (display-graphic-p)
+  (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING)))
+
 ;; ================= 2.load packages and customizations ==================
 
 ;; history
@@ -138,13 +146,16 @@ em
 (require 'modeline-mc)
 
 ;; color theme
-(require 'light-theme-mc)
+(require 'dark-theme-mc)
+
+;; undo system
+(require 'undo-mc)
 
 ;; EVIL mode
 ;(require 'evil-mc)
 
 ;; interactively do things
-(require 'ido-mc)
+(require 'interactive-mc)
 
 ;; Smart M-x
 (require 'smex-mc)
