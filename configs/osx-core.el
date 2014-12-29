@@ -1,11 +1,3 @@
-;; Get environment path
-;; (setq test-str (shell-command-to-string "launchctl getenv PATH"))
-;; (when (string-match "[ \n]*$" test-str)
-;; (setq test-str (concat  (replace-match "" nil nil test-str) )))
-
-;; (setenv "PATH" test-str)
-;; (setq-default exec-path (append exec-path (split-string test-str ":")))
-
 ;; fonts
 (when (window-system)
   (set-face-attribute 'default nil :font "Monaco-12"))
