@@ -96,7 +96,7 @@
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
 ;; mini window area
-(setq-default max-mini-window-height 2)
+(setq-default max-mini-window-height 6)
 
 ;; delete trailing white space on save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)

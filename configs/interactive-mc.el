@@ -1,10 +1,11 @@
 (package-install 'smex)
-(require 'ido)
+(package-install 'ido-vertical-mode)
 
-(ido-mode t)
 (setq ido-enable-flex-matching t)
 (setq-default ido-auto-merge-work-directories-length -1)
+(ido-vertical-mode 1)
 (flx-ido-mode 1)
+(ido-mode t)
 
 ;; bookmarks
 (global-set-key
