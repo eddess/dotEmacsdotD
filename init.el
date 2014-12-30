@@ -123,6 +123,12 @@
 ;; history
 (require 'history-mc)
 
+;; expand region
+(require 'expand-region-mc)
+
+;; jump functions
+(require 'jump-mc)
+
 ;; frames
 (require 'frame-mc)
 
@@ -134,9 +140,6 @@
 
 ;; undo system
 (require 'undo-mc)
-
-;; EVIL mode
-;(require 'evil-mc)
 
 ;; interactively do things
 (require 'interactive-mc)
@@ -161,9 +164,6 @@
 
 ;; markdown configurations
 (require 'markdown-mc)
-
-;; Golang mode
-;(require 'go-mc)
 
 ;; autocomplete
 (require 'completion-mc)
