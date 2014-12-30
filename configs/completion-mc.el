@@ -1,5 +1,5 @@
 ;; auto-complete with company-mode
-(ensure-installed 'company)
+(package-install 'company)
 
 ;; very litte delay. start completing right away
 (setq-default company-idle-delay 0.1)

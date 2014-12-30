@@ -1,6 +1,6 @@
 ;; settings for editting LISP code
 
-(ensure-installed 'company)
+(package-install 'company)
 
 (defun lisp-mc-settings()
   (interactive)

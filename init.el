@@ -23,21 +23,6 @@
 (package-install 'use-package)
 (require 'use-package)
 
-;; ensure packages
-(defun ensure-installed (&rest packages)
-  " Ensure packages are installed "
-  (while packages
-    (setq p (pop packages))
-    (if (not (package-installed-p p))
-		(progn
-		  (if (not (file-exists-p "~/.emacs.d/elpa-download.txt"))
-			  (progn
-				(package-refresh-contents)
-				(with-temp-file "~/.emacs.d/elpa-download.txt"
-				  (insert "downloaded"))))
-		  (message "Ensuring %s" p)
-		  (package-install p)))))
-
 ;; load path
 (add-to-list 'load-path "~/.emacs.d/configs")
 (add-to-list 'load-path "~/.emacs.d/themes")
@@ -122,7 +107,7 @@
 (setq-default explicit-shell-file-name shell-file-name)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
-;; winner mode for those popup windows I don't want to keep (C-c left or right)
+;; winner mode for those popup windows
 (winner-mode 1)
 
 ;; sentences end with a single space
@@ -145,7 +130,7 @@
 (require 'modeline-mc)
 
 ;; color theme
-(require 'dark-theme-mc)
+(require 'light-theme-mc)
 
 ;; undo system
 (require 'undo-mc)
@@ -178,7 +163,7 @@
 (require 'markdown-mc)
 
 ;; Golang mode
-(require 'go-mc)
+;(require 'go-mc)
 
 ;; autocomplete
 (require 'completion-mc)

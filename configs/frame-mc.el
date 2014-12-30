@@ -19,12 +19,13 @@
  (if (window-minibuffer-p (selected-window))
 	 (keyboard-escape-quit)))
 
-
+;; window movement bindings
 (global-set-key (kbd "C-s-<up>") 'windmove-up)
 (global-set-key (kbd "C-s-<down>") 'windmove-down)
 (global-set-key (kbd "C-s-<left>") 'windmove-left)
 (global-set-key (kbd "C-s-<right>") 'windmove-right)
 
+;; window split zoom
 (define-key global-map (kbd "C-|") 'toggle-windows-split)
 
 (provide 'frame-mc)

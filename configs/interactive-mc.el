@@ -16,4 +16,7 @@
 ;; hide some extensions
 (setq ido-ignore-files '("*.pyc" ".exe"))
 
+;; buffer selection
+(define-key global-map (kbd "s-b") 'ido-switch-buffer)
+
 (provide 'interactive-mc)

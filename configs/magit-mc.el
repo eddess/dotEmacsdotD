@@ -1,3 +1,3 @@
-(ensure-installed 'magit)
+(package-install 'magit)
 
 (provide 'magit-mc)

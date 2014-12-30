@@ -1,10 +1,12 @@
 ;;; My settings for programming in python-mode
 (require 'completion-mc)
-(ensure-installed 'company-anaconda 'anaconda-mode)
+(package-install 'company-anaconda)
+(package-install 'anaconda-mode)
 (require 'hs-mc)
 
 ;; virtual env settings
-(ensure-installed 'virtualenvwrapper 'flycheck)
+(package-install 'virtualenvwrapper)
+(package-install 'flycheck)
 (setq venv-location "~/.virtualenvs")
 
 

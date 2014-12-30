@@ -1,4 +1,6 @@
-(ensure-installed 'projectile 'helm-projectile 'flx-ido)
+(package-install 'projectile)
+(package-install 'helm-projectile)
+(package-install 'flx-ido)
 
 (setq projectile-indexing-method 'alien)
 

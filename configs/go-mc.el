@@ -1,4 +1,4 @@
-(ensure-installed 'go-mode 'company-go)
+(package-install 'go-mode 'company-go)
 
 (require 'go-flycheck (format "%s/%s"
 							  (getenv "GOPATH")
