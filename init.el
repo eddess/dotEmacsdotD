@@ -144,9 +144,6 @@
 ;; interactively do things
 (require 'interactive-mc)
 
-;; Smart M-x
-(require 'smex-mc)
-
 ;; project configuration
 (require 'project-mc)
 
