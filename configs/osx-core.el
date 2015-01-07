@@ -11,6 +11,10 @@
 ;; File open
 (global-set-key (kbd "s-o") 'find-file)
 
+;; Frame movement
+(global-set-key (kbd "M-s-<left>") 'ns-prev-frame)
+(global-set-key (kbd "M-s-<right>") 'ns-next-frame)
+
 ;; tramp
 (setq tramp-default-method "ssh")
 

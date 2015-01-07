@@ -55,7 +55,7 @@
 (setq ring-bell-function 'ignore)
 
 ;; better handling of large file scrolling
-(setq jit-lock-defer-time 0.02)
+(setq jit-lock-defer-time 0.01)
 
 ;; frame title
 (setq frame-title-format
@@ -136,7 +136,7 @@
 (require 'modeline-mc)
 
 ;; color theme
-(require 'light-theme-mc)
+(require 'dark-theme-mc)
 
 ;; undo system
 (require 'undo-mc)
