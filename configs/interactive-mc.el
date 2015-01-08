@@ -1,4 +1,5 @@
 (package-install 'smex)
+(package-install 'flx-ido)
 (package-install 'ido-vertical-mode)
 
 (setq ido-enable-flex-matching t)
