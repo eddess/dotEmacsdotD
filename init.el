@@ -20,6 +20,11 @@
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 (package-initialize)
+
+ fetch the list of packages available
+(unless package-archive-contents
+  (package-refresh-contents))
+
 (package-install 'use-package)
 (require 'use-package)
 
