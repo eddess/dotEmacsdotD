@@ -2,6 +2,9 @@
 (when (window-system)
   (set-face-attribute 'default nil :font "Monaco-12"))
 
+;; set the funtion hey to be the hyper key
+(setq ns-function-modifier 'hyper)
+
 ;; Buffer movement
 (global-set-key (kbd "s-<left>") 'move-beginning-of-line)
 (global-set-key (kbd "s-<right>") 'move-end-of-line)
