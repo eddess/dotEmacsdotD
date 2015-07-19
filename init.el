@@ -60,7 +60,10 @@
 (setq ring-bell-function 'ignore)
 
 ;; better handling of large file scrolling
-(setq jit-lock-defer-time 0.01)
+;(setq jit-lock-defer-time 0.01)
+
+;; allow mouse in terminal
+(xterm-mouse-mode t)
 
 ;; frame title
 (setq frame-title-format
@@ -73,7 +76,7 @@
 
 ;; default window size in GUI mode
 (add-to-list 'default-frame-alist '(width . 79))
-(add-to-list 'default-frame-alist '(height . 60))
+(add-to-list 'default-frame-alist '(height . 80))
 
 ;; Pop up windows/frames control
 (setq pop-up-windows t)
@@ -85,6 +88,9 @@
 (tool-bar-mode 0)
 (setq initial-frame-alist
 	  '((tool-bar-lines . 0)))
+
+;; hide menu bar in terminal mode
+(menu-bar-mode -1)
 
 ;; scrolling
 (scroll-bar-mode 0)
@@ -101,7 +107,7 @@
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
 ;; mini window area
-(setq-default max-mini-window-height 6)
+;(setq-default max-mini-window-height 2)
 
 ;; delete trailing white space on save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -110,7 +116,7 @@
 ;; use zsh for shell
 (setq-default shell-file-name "zsh")
 (setq-default explicit-shell-file-name shell-file-name)
-(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+;; (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 ;; winner mode for those popup windows
 (winner-mode 1)
@@ -141,7 +147,7 @@
 (require 'modeline-mc)
 
 ;; color theme
-(require 'dark-theme-mc)
+(require 'light-theme-mc)
 
 ;; undo system
 (require 'undo-mc)
