@@ -147,7 +147,7 @@
 (require 'modeline-mc)
 
 ;; color theme
-(require 'light-theme-mc)
+(require 'atom-theme-mc)
 
 ;; undo system
 (require 'undo-mc)
