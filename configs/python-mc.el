@@ -9,6 +9,8 @@
 (package-install 'flycheck)
 (setq venv-location "~/.virtualenvs")
 
+;; use ipython as interpreter
+(setq python-shell-interpreter "ipython")
 
 (defun python-mc-settings()
   (interactive)
