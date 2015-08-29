@@ -13,9 +13,9 @@
 	  (bt-gray-light "#909090")
 	  (bt-white "#FFFFFF")
 
-	  (bt-green "#A8FF60")
+	  (bt-green "#79B845")
 
-      (bt-magenta "#E68AE6")
+      (bt-magenta "#BF7CBF")
 
 	  (bt-purple "#B6B7EB")
 
@@ -25,7 +25,7 @@
 
 	  (bt-brown "#C4BE89")
 
-	  (bt-cyan "#293739")
+	  (bt-cyan "#00AAAA")
 	  (bt-cyan-info "#81F7F3")
 
 	  (bt-bg "#1C1C1C")
