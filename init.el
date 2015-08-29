@@ -84,13 +84,10 @@
 ;; column numbers
 (column-number-mode t)
 
-;; Disable the tool bar in GUI mode
+;; Disable the tool bar
 (tool-bar-mode 0)
-(setq initial-frame-alist
-	  '((tool-bar-lines . 0)))
-
 ;; hide menu bar in terminal mode
-(menu-bar-mode -1)
+(menu-bar-mode -99)
 
 ;; scrolling
 (scroll-bar-mode 0)
