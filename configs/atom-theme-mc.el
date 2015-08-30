@@ -43,14 +43,14 @@
    `(region ((t (:background ,bt-gray))))
 
    ;; Font lock
-   `(font-lock-builtin-face ((t (:foreground ,bt-red))))
+   `(font-lock-builtin-face ((t (:foreground ,bt-yellow))))
    `(font-lock-comment-face ((t (:foreground ,bt-gray-light))))
-   `(font-lock-constant-face ((t (:foreground ,bt-yellow))))
+   `(font-lock-constant-face ((t (:foreground ,bt-green))))
    `(font-lock-doc-face ((t (:foreground ,bt-gray-light))))
-   `(font-lock-function-name-face ((t (:foreground ,bt-green))))
-   `(font-lock-keyword-face ((t (:foreground ,bt-red))))
-   `(font-lock-string-face ((t (:foreground ,bt-yellow))))
-   `(font-lock-type-face ((t (:foreground ,bt-blue))))
+   `(font-lock-function-name-face ((t (:foreground ,bt-yellow))))
+   `(font-lock-keyword-face ((t (:foreground ,bt-blue))))
+   `(font-lock-string-face ((t (:foreground ,bt-green))))
+   `(font-lock-type-face ((t (:foreground ,bt-yellow))))
    `(font-lock-variable-name-face ((t (:foreground ,bt-magenta))))
    `(font-lock-warning-face ((t (:bold t :foreground ,bt-orange-warning))))
 
@@ -72,8 +72,8 @@
    `(term-color-magenta ((t (:foreground ,bt-magenta ))))
    `(term-color-cyan ((t (:foreground ,bt-cyan ))))
    `(term-color-white ((t (:foreground ,bt-fg ))))
-   '(term-default-fg-color ((t (:inherit term-color-black ))))
-   '(term-default-bg-color ((t (:inherit term-color-white ))))
+   '(term-default-fg-color ((t (:inherit term-color-white ))))
+   '(term-default-bg-color ((t (:inherit term-color-black ))))
 
    ;; Flycheck
    `(flycheck-error ((t (:foreground ,bt-red-error ))))

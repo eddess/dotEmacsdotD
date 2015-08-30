@@ -1,15 +1,15 @@
 ;;; Configurations for default theme
 
-(let ((bt-blue "#3535AE")
+(let ((bt-blue "#2F2FAA")
 
-	  (bt-red "#940000")
+	  (bt-red "#a22f2a")
 	  (bt-red-error "#E90000")
 
-      (bt-gray "#909090")
-	  (bt-gray-lightest "#E0E0E0")
-	  (bt-gray-light "#C9C9C9")
+      (bt-gray-dark "#808080")
+	  (bt-gray "#C6C6C6")
+	  (bt-gray-light "#E4E4E4")
 
-	  (bt-green "#004000")
+	  (bt-green "#004C1A")
 
       (bt-magenta "#9C2073")
 
@@ -26,7 +26,7 @@
 
 	  (bt-black "#000000")
 
-	  (bt-fg "#000000")
+	  (bt-fg "#181818")
 
 	  (bt-bg "#FFFFFF"))
 
@@ -37,15 +37,15 @@
 
    ;; basic faces
    `(default ((t (:foreground ,bt-fg :background ,bt-bg))))
-   `(cursor ((t (:foreground ,bt-bg))))
+   `(cursor ((t (:foreground ,bt-bg :background ,bt-fg))))
    `(minibuffer-prompt ((t (:foreground ,bt-blue :weight Bold))))
-   `(region ((t (:background ,bt-gray-lightest))))
+   `(region ((t (:background ,bt-gray-light))))
 
    ;; Font lock
    `(font-lock-builtin-face ((t (:foreground ,bt-green :weight Bold))))
-   `(font-lock-comment-face ((t (:foreground ,bt-gray))))
+   `(font-lock-comment-face ((t (:foreground ,bt-gray-dark))))
    `(font-lock-constant-face ((t (:foreground ,bt-brown))))
-   `(font-lock-doc-string-face ((t (:foreground ,bt-gray-light))))
+   `(font-lock-doc-string-face ((t (:foreground ,bt-gray))))
    `(font-lock-function-name-face ((t (:foreground ,bt-green))))
    `(font-lock-keyword-face ((t (:foreground ,bt-red :weight Bold))))
    `(font-lock-string-face ((t (:foreground ,bt-brown))))
@@ -54,8 +54,9 @@
    `(font-lock-warning-face ((t (:bold t :foreground ,bt-brown))))
 
    ; modeline
-   `(mode-line ((t (:box (:line-width 1 :color ,bt-gray-light :style none)
-						 :foreground ,bt-fg :background ,bt-gray-lightest))))
+   `(mode-line ((t (:box (:line-width 1 :color ,bt-gray :style none)
+						 :foreground ,bt-fg :background ,bt-gray))))
+   `(mode-line-inactive ((t (:inherit (mode-line) :background ,bt-gray-light :foreground ,bt-gray-dark))))
 
    ;; IDO
    `(ido-first-match ((t (:foreground ,bt-purple :weight Bold))))
@@ -79,7 +80,5 @@
    `(flycheck-warning ((t (:foreground ,bt-orange-warning :weight Bold))))
    `(flycheck-info ((t (:foreground ,bt-cyan-info :weight Bold))))
   ))
-
-
 
 (provide 'light-theme-mc)
