@@ -88,6 +88,12 @@
    `(magit-popup-heading  ((t (:inherit (magit-section-heading)))))
    `(magit-popup-key  ((t (:foreground ,bt-red))))
 
+   `(magit-process-ok  ((t (:foreground ,bt-green))))
+   `(magit-process-ng  ((t (:foreground ,bt-red))))
+
+   `(magit-diffstat-added  ((t (:inherit (magit-process-ok)))))
+   `(magit-diffstat-removed  ((t (:inherit (magit-process-ng)))))
+
    `(git-commit-comment-heading  ((t (:inherit (magit-section-heading)))))
    `(git-commit-comment-branch  ((t (:inherit (magit-branch-local)))))
   ))
