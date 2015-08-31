@@ -2,6 +2,8 @@
 (when (window-system)
   (set-face-attribute 'default nil :font "Monaco-12"))
 
+(setq-default line-spacing 2)
+
 ;; set the funtion hey to be the hyper key
 (setq ns-function-modifier 'hyper)
 
