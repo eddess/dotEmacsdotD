@@ -93,6 +93,7 @@
 
    `(magit-diffstat-added  ((t (:inherit (magit-process-ok)))))
    `(magit-diffstat-removed  ((t (:inherit (magit-process-ng)))))
+   `(magit-diff-file-heading ((t (:weight normal))))
 
    `(git-commit-comment-heading  ((t (:inherit (magit-section-heading)))))
    `(git-commit-comment-branch  ((t (:inherit (magit-branch-local)))))
