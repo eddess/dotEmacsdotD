@@ -46,10 +46,7 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; CUA mode
-(cua-mode t)
-(setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
-(transient-mark-mode 1) ;; No region when it is not highlighted
-(setq cua-keep-region-after-copy t) ;; Standard Windows behaviour
+(cua-mode nil)
 
 ;; OS specific core settings
 (cond
@@ -175,6 +172,12 @@
 
 ;; Html files
 (require 'html-mc)
+
+;; Org-mode
+(require 'org-mode-mc)
+
+;; Evil mode
+(require 'evil-mc)
 
 ;; =================== 3.hacks ==================
 ;; raise frame on OsX
