@@ -33,11 +33,13 @@
 
 (defun mc/modeline-vc ()
   "Return version control information"
-  (setq result (concat
-				(symbol-name (vc-backend buffer-file-name))
-				":"
-				(vc-working-revision buffer-file-name)
-				" "))
+  (setq result " ")
+  (unless (equal (vc-backend buffer-file-name) nil)
+	(setq result (concat
+				  (symbol-name (vc-backend buffer-file-name))
+				  ":"
+				  (vc-working-revision buffer-file-name))))
+  (concat result " ")
   result)
 
 (defun mc/modeline ()
