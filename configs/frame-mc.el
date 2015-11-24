@@ -20,7 +20,7 @@
 	 (keyboard-escape-quit)))
 
 ;; window movement bindings
-(setq-default windmove-prefix "C-c w")
+(setq-default windmove-prefix "s-1")
 (global-set-key (kbd (concat windmove-prefix " <up>")) 'windmove-up)
 (global-set-key (kbd (concat windmove-prefix " <down>")) 'windmove-down)
 (global-set-key (kbd (concat windmove-prefix " <left>")) 'windmove-left)

@@ -25,10 +25,10 @@
   (when (require 'projectile nil :noerror)
 	(setq project (projectile-project-name))
 	(unless (string-equal project "-")
-	  (setq result (concat "[" project "] "))))
+	  (setq result (concat "<" project "> "))))
 
   ;; Buffer identification
-  (setq result (concat result (buffer-name)))
+  (setq result (concat result (buffer-name) " [" (symbol-name major-mode) "]"))
   result)
 
 (defun mc/modeline-vc ()

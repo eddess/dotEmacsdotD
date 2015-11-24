@@ -27,6 +27,7 @@ semanticdb/
 
 # virtualenv folder
 .python-environments/
+anaconda-mode/
 
 # abbrevs
 abbrev_defs
