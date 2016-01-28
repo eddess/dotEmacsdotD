@@ -26,7 +26,7 @@
 (global-set-key (kbd (concat windmove-prefix " <left>")) 'windmove-left)
 (global-set-key (kbd (concat windmove-prefix " <right>")) 'windmove-right)
 
-;; window split zoom
-(define-key global-map (kbd "C-|") 'toggle-windows-split)
+;; Don't split automatically. I'll split when i want
+(set-frame-parameter nil 'unsplittable t)
 
 (provide 'frame-mc)

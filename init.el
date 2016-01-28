@@ -71,9 +71,11 @@
 (setq cursor-type 'bar)
 (blink-cursor-mode 0)
 
-;; default window size in GUI mode
-(add-to-list 'default-frame-alist '(width . 120))
+;; default window in GUI mode
+(add-to-list 'default-frame-alist '(width . 135))
 (add-to-list 'default-frame-alist '(height . 40))
+(add-to-list 'default-frame-alist '(left . 400))
+(add-to-list 'default-frame-alist '(top . 250))
 
 ;; Pop up windows/frames control
 (setq pop-up-windows t)

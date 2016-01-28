@@ -97,6 +97,11 @@
 
    `(git-commit-comment-heading  ((t (:inherit (magit-section-heading)))))
    `(git-commit-comment-branch  ((t (:inherit (magit-branch-local)))))
+
+   `(git-timemachine-minibuffer-detail-face ((t (:foreground ,bt-brown))))
+
+   ;; Filetype based
+   `(sh-quoted-exec ((t (:foreground ,bt-green))))
   ))
 
 (provide 'light-theme-mc)
