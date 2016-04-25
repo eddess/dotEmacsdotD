@@ -11,7 +11,7 @@
 (global-set-key (kbd "s-<down>") 'end-of-buffer)
 
 ;; File open
-(global-set-key (kbd "s-o") 'find-file)
+;(global-set-key (kbd "s-o") 'find-file)
 
 ;; Frame movement
 (global-set-key (kbd "M-s-<left>") 'ns-prev-frame)
