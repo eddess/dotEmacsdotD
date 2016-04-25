@@ -1,7 +1,7 @@
 ;;; Configurations for default theme
 
 (let (
-	  (bt-blue "#89ABCA")
+	  (bt-blue "#00AAFF")
 
 	  (bt-red "#C66363")
 	  (bt-red-error "#E90000")
@@ -23,8 +23,8 @@
 	  (bt-cyan "#5CBAB6")
 	  (bt-cyan-info "#81F7F3")
 
-	  (bt-bg "#222")
-	  (bt-fg "#CCC"))
+	  (bt-bg "#000000")
+	  (bt-fg "#EEEEEE"))
 
   ;; Set the color of the fringe
   (custom-set-faces

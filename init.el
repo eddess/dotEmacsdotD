@@ -1,4 +1,4 @@
-;; ===================== 0. Personal =================
+t;; ===================== 0. Personal =================
 (setq user-full-name "Eddy Essien"
 	  user-mail-address "eddy.essien@gmail.com"
 	  user-work-address "eessien@coverity.com")
@@ -72,10 +72,10 @@
 (blink-cursor-mode 0)
 
 ;; default window in GUI mode
-(add-to-list 'default-frame-alist '(width . 135))
-(add-to-list 'default-frame-alist '(height . 40))
-(add-to-list 'default-frame-alist '(left . 400))
-(add-to-list 'default-frame-alist '(top . 250))
+(add-to-list 'default-frame-alist '(width . 100))
+(add-to-list 'default-frame-alist '(height . 28))
+;(add-to-list 'default-frame-alist '(left . 400))
+;(add-to-list 'default-frame-alist '(top . 250))
 
 ;; Pop up windows/frames control
 (setq pop-up-windows t)
@@ -110,8 +110,8 @@
 
 ;; z shell
 ;; use zsh for shell
-(setq-default shell-file-name "zsh")
-(setq-default explicit-shell-file-name shell-file-name)
+;; (setq-default shell-file-name "zsh")
+;; (setq-default explicit-shell-file-name shell-file-name)
 ;; (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 ;; winner mode for those popup windows
@@ -141,9 +141,6 @@
 
 ;; modeline
 (require 'modeline-mc)
-
-;; color theme
-(require 'light-theme-mc)
 
 ;; undo system
 (require 'undo-mc)
@@ -180,6 +177,9 @@
 
 ;; Evil mode
 (require 'evil-mc)
+
+;; Color theme
+(require 'dark-theme-mc)
 
 ;; =================== 3.hacks ==================
 ;; raise frame on OsX
