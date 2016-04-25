@@ -84,12 +84,14 @@ t;; ===================== 0. Personal =================
 (column-number-mode t)
 
 ;; Disable the tool bar
-(tool-bar-mode 0)
+(when (display-graphic-p)
+  (tool-bar-mode 0))
 ;; hide menu bar in terminal mode
 (menu-bar-mode -99)
 
 ;; scrolling
-(scroll-bar-mode 0)
+(when (display-graphic-p)
+  (scroll-bar-mode 0))
 (setq-default mouse-wheel-scroll-amount '(4 ((shift) . 4)))
 (setq mouse-wheel-progressive-speed nil)
 (setq mouse-wheel-follow-mouse 't)
