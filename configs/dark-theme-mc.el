@@ -23,7 +23,7 @@
 	  (bt-cyan "#5CBAB6")
 	  (bt-cyan-info "#81F7F3")
 
-	  (bt-bg "#000000")
+	  (bt-bg "#111111")
 	  (bt-fg "#EEEEEE"))
 
   ;; Set the color of the fringe
