@@ -142,7 +142,7 @@ t;; ===================== 0. Personal =================
 (require 'frame-mc)
 
 ;; modeline
-(require 'modeline-mc)
+(require 'modeline2-mc)
 
 ;; undo system
 (require 'undo-mc)
@@ -181,7 +181,7 @@ t;; ===================== 0. Personal =================
 (require 'evil-mc)
 
 ;; Color theme
-(require 'dark-theme-mc)
+(require 'light-theme-mc)
 
 ;; =================== 3.hacks ==================
 ;; raise frame on OsX

@@ -1,3 +1,7 @@
+;; unset annoying keys
+(global-unset-key (kbd "s-p"))
+(global-unset-key (kbd "s-o"))
+
 ;; tramp
 (setq tramp-default-method "ssh")
 
@@ -16,6 +20,8 @@
 ;; Frame movement
 (global-set-key (kbd "M-s-<left>") 'ns-prev-frame)
 (global-set-key (kbd "M-s-<right>") 'ns-next-frame)
+
+;; Font
 
 ;; package variable
 (provide 'osx-core)
