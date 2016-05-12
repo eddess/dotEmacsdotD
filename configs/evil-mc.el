@@ -3,7 +3,7 @@
   :ensure t
 
   :init (progn
-		  (setq evil-default-state 'normal)
+		  (setq evil-default-state 'emacs)
 		  (evil-mode t)))
 
 (provide 'evil-mc)

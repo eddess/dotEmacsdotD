@@ -74,8 +74,6 @@ t;; ===================== 0. Personal =================
 ;; default window in GUI mode
 (add-to-list 'default-frame-alist '(width . 100))
 (add-to-list 'default-frame-alist '(height . 28))
-;(add-to-list 'default-frame-alist '(left . 400))
-;(add-to-list 'default-frame-alist '(top . 250))
 
 ;; Pop up windows/frames control
 (setq pop-up-windows t)
@@ -111,10 +109,9 @@ t;; ===================== 0. Personal =================
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; z shell
-;; use zsh for shell
-;; (setq-default shell-file-name "zsh")
-;; (setq-default explicit-shell-file-name shell-file-name)
-;; (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
+(setq-default shell-file-name "zsh")
+(setq-default explicit-shell-file-name shell-file-name)
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 ;; winner mode for those popup windows
 (winner-mode 1)

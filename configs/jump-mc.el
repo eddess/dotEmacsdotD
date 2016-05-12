@@ -1,12 +1,15 @@
 ;; makes use of ace-jump
-(package-install 'ace-jump-mode)
+(use-package ace-jump-mode
+  :ensure t
 
-;; prefix C-c j
-(global-unset-key (kbd "C-c j"))
+  :init (progn
+		  (setq-default usr/ace-prefix "C-c j")
 
-(global-set-key (kbd "C-c j w") 'ace-jump-word-mode)
-(global-set-key (kbd "C-c j c") 'ace-jump-char-mode)
-(global-set-key (kbd "C-c j l") 'ace-jump-line-mode)
+		  (global-unset-key (kbd usr/ace-prefix))
+
+		  (global-set-key ( kbd (concat usr/ace-prefix " w")) 'ace-jump-word-mode)
+		  (global-set-key (kbd (concat usr/ace-prefix " c")) 'ace-jump-char-mode)
+		  (global-set-key (kbd (concat usr/ace-prefix " l")) 'ace-jump-line-mode)))
 
 
 (provide 'jump-mc)
