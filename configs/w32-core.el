@@ -1,5 +1,5 @@
 ;; font
-(set-face-attribute 'default nil :font "Consolas-10")
+(add-to-list 'default-frame-alist '(font . "Consolas-10"))
 
 ;; Get my server functionality for Windows
 ;(require 'myserver)
