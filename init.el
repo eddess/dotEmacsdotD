@@ -168,6 +168,9 @@
 ;; Html files
 (user/load-config "html")
 
+;; Golang
+(user/load-config "go")
+
 
 ;; Color theme
 (user/load-theme "light-theme")

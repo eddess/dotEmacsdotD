@@ -7,7 +7,8 @@
 (defun user/go-settings()
   (interactive)
 
-  ;; gofmt before saving
+  ;; Check file before saving
+  (setq gofmt-command "goimports")
   (add-hook 'before-save-hook 'gofmt-before-save)
 
   ;; flycheck
