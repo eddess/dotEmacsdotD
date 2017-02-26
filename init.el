@@ -49,7 +49,7 @@
 
 ;; OS specific core settings
 (cond
- ((string-equal system-type "windows-nt")(require 'w32-core))
+ ((string-equal system-type "windows-nt")(require 'w32-mc))
  ((string-equal system-type "darwin")(require 'osx-core)))
 
 ;; disable the bell

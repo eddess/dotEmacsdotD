@@ -1,47 +1,37 @@
-;; Start the emacs server process if not on Windows. Windows auto starts it
-;(unless (string-equal system-type "windows-nt")
 (server-start)
 
-;; Common Lisp dependency
-(eval-when-compile (require 'cl))
-
 ;; my delete frame function. Hides if last frame
-(defun delete-a-frame (fr)
+(defun w32server/delete-a-frame (fr)
   (unless
 	  (condition-case nil
 		  (delete-frame fr t)
 		(error nil))
 	(make-frame-invisible nil t)))
 
-;; custom delete frame
-(defun delete-this-frame ()
-  (interactive)
-  (delete-a-frame (selected-frame)))
-
 ;; delete every frame
-(defun delete-all-frames ()
-  (interactive)
+(defun w32server/delete-all-frames ()
   (dolist (fr (frame-list))
-	(delete-a-frame fr)))
+	(w32server/delete-a-frame fr)))
 
 ;; Variable used to advice emacsserver to NOT quit
-(defvar myserver-killFlag nil)
+(defvar w32server/killFlag nil)
 
 ;; now advice emacs to query this variable when asked to kill
-(defadvice kill-emacs (around killServer activate)
+(defadvice kill-emacs (around w32server/killemacs activate)
   		   "Only kill emacs if killFlag is set"
-  		   (if  myserver-killFlag
-      		 ad-do-it
-    		 (delete-this-frame)))
+  		   (if  w32server/killFlag
+			   ad-do-it
+			 (w32server/delete-a-frame (selected-frame))))
 
 ;; the function that will actually kill the server
 (defun kill-server ()
   (interactive)
-  (setq  myserver-killFlag t)
-  (save-buffers-kill-emacs))
+  (setq w32server/killFlag t)
+  (save-buffers-kill-terminal)
+  (kill-emacs))
 
 ;; function that closes all buffers before quitting
-(defun kill-session-with-server-alive()
+(defun w32server/kill-session-with-server-alive()
   (interactive)
   (save-some-buffers)
   ;; kill buffers without asking
@@ -49,11 +39,11 @@
 			(y-or-no-p (&rest args) t))
 	(kill-some-buffers))
   ;; delete all frames
-  (delete-all-frames))
+  (w32server/delete-all-frames))
 
 ;; binding C-xC-c to kill the current session of files before leaving
-(global-set-key (kbd "C-x C-c") 'kill-session-with-server-alive)
+(global-set-key (kbd "C-x C-c") 'w32server/kill-session-with-server-alive)
 
 
 ;; Package features
-(provide 'myserver)
+(provide 'w32server)
