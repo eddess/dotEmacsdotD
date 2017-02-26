@@ -1,7 +1,6 @@
-t;; ===================== 0. Personal =================
+;; ===================== 0. Personal =================
 (setq user-full-name "Eddy Essien"
-	  user-mail-address "eddy.essien@gmail.com"
-	  user-work-address "eessien@coverity.com")
+	  user-mail-address "eddy.essien@gmail.com")
 
 ;; ===================== 1.Core =======================
 
@@ -75,17 +74,14 @@ t;; ===================== 0. Personal =================
 (add-to-list 'default-frame-alist '(width . 100))
 (add-to-list 'default-frame-alist '(height . 28))
 
-;; Pop up windows/frames control
-(setq pop-up-windows t)
-
 ;; column numbers
 (column-number-mode t)
 
 ;; Disable the tool bar
 (if (functionp 'tool-bar-mode)
   (tool-bar-mode 0))
-;; hide menu bar in terminal mode
-(menu-bar-mode -99)
+;; hide menu bar
+(menu-bar-mode 0)
 
 ;; scrolling
 (if (functionp 'scroll-bar-mode)
@@ -102,19 +98,8 @@ t;; ===================== 0. Personal =================
 (define-key text-mode-map (kbd "<tab>") 'tab-to-tab-stop)
 (define-key global-map (kbd "RET") 'newline-and-indent)
 
-;; mini window area
-;(setq-default max-mini-window-height 2)
-
 ;; delete trailing white space on save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-
-;; z shell
-(setq-default shell-file-name "zsh")
-(setq-default explicit-shell-file-name shell-file-name)
-(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
-
-;; winner mode for those popup windows
-(winner-mode 1)
 
 ;; sentences end with a single space
 (setq sentence-end-double-space nil)
@@ -180,26 +165,8 @@ t;; ===================== 0. Personal =================
 ;; Color theme
 (require 'light-theme-mc)
 
-;; =================== 3.hacks ==================
-;; raise frame on OsX
-(when (featurep 'ns)
-  (defun ns-raise-emacs ()
-    "Raise Emacs."
-    (ns-do-applescript "tell application \"Emacs\" to activate"))
 
-  (defun ns-raise-emacs-with-frame (frame)
-    "Raise Emacs and select the provided frame."
-    (with-selected-frame frame
-      (when (display-graphic-p)
-        (ns-raise-emacs))))
-
-  (add-hook 'after-make-frame-functions 'ns-raise-emacs-with-frame)
-
-  (when (display-graphic-p)
-    (ns-raise-emacs)))
-
-
-;; ================== 4. Post ==================
+;; ================== 3. Post ==================
 ;; clean package install file
 (if (file-exists-p "~/.emacs.d/elpa-download.txt")
 	(delete-file "~/.emacs.d/elpa-download.txt"))

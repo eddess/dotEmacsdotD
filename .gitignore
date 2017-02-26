@@ -42,3 +42,6 @@ bookmarks
 
 # smex items
 smex-items
+
+# customization file
+customizations.el
