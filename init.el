@@ -1,6 +1,6 @@
 ;; ===================== 0. Personal =================
-(setq user-full-name "Eddy Essien"
-	  user-mail-address "eddy.essien@gmail.com")
+(setq user/name "Eddy Essien"
+	  user/email "eddy.essien@gmail.com")
 
 ;; ===================== 1.Core =======================
 
@@ -27,10 +27,6 @@
 (package-install 'use-package)
 (require 'use-package)
 
-;; load path
-(add-to-list 'load-path "~/.emacs.d/configs")
-(add-to-list 'load-path "~/.emacs.d/themes")
-
 ;; info path
 (setq Info-default-directory-list
       (append Info-default-directory-list
@@ -46,11 +42,6 @@
 
 ;; CUA mode
 (cua-mode nil)
-
-;; OS specific core settings
-(cond
- ((string-equal system-type "windows-nt")(require 'w32-mc))
- ((string-equal system-type "darwin")(require 'osx-core)))
 
 ;; disable the bell
 (setq ring-bell-function 'ignore)
@@ -109,61 +100,79 @@
 (when (display-graphic-p)
   (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING)))
 
+;; history related configs
+
+(setq savehist-file "~/.emacs.d/savehist")
+
+(setq savehist-additional-variables
+	  '(kill-ring
+		search-ring
+		regexp-search-ring))
+
+(setq history-length t)
+(setq history-delete-duplicates t)
+(setq savehist-save-minibuffer-history 1)
+
+(savehist-mode 1)
+
 ;; ================= 2.load packages and customizations ==================
 
-;; history
-(require 'history-mc)
+(defun user/load-theme (theme)
+  (load-library (concat "~/.emacs.d/themes/" theme ".el")))
 
-;; expand region
-(require 'expand-region-mc)
+(defun user/load-config (config)
+  (load-library (concat "~/.emacs.d/configs/" config ".el")))
+
+
+;; OS settings
+(cond
+ ((string-equal system-type "windows-nt") (user/load-config "win64"))
+ ((string-equal system-type "darwin") (user/load-config "osx-core")))
+
+;; Expand region
+(user/load-config "expand-region")
 
 ;; jump functions
-(require 'jump-mc)
+(user/load-config "ace-jump")
 
-;; frames
-(require 'frame-mc)
+;; Frame Functions
+(user/load-config "frame")
 
-;; modeline
-(require 'modeline2-mc)
+;; Modeline
+(user/load-config "modeline")
 
-;; undo system
-(require 'undo-mc)
+;;undo-tree
+(user/load-config "undo-tree")
 
 ;; interactively do things
-(require 'interactive-mc)
+(user/load-config "interactive")
 
 ;; project configuration
-(require 'project-mc)
+(user/load-config "projectile")
 
 ;; lisp configurations
-(require 'lisp-mc)
-
-;; python configurations
-(require 'python-mc)
-
-;; ruby configurations
-(require 'ruby-mc)
+(user/load-config "lisp")
 
 ;; magit for git
-(require 'magit-mc)
-
-;; markdown configurations
-(require 'markdown-mc)
-
-;; autocomplete
-(require 'completion-mc)
-
-;; Html files
-(require 'html-mc)
+(user/load-config "git")
 
 ;; Org-mode
-(require 'org-mode-mc)
+(user/load-config "org-mode")
 
-;; Evil mode
-(require 'evil-mc)
+;; python configurations
+(user/load-config "python")
+
+;; markdown configurations
+(user/load-config "markdown")
+
+;; Html files
+(user/load-config "html")
+
 
 ;; Color theme
-(require 'light-theme-mc)
+(user/load-theme "light-theme")
+
+
 
 
 ;; ================== 3. Post ==================

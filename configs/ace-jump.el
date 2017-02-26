@@ -10,6 +10,3 @@
 		  (global-set-key ( kbd (concat usr/ace-prefix " w")) 'ace-jump-word-mode)
 		  (global-set-key (kbd (concat usr/ace-prefix " c")) 'ace-jump-char-mode)
 		  (global-set-key (kbd (concat usr/ace-prefix " l")) 'ace-jump-line-mode)))
-
-
-(provide 'jump-mc)

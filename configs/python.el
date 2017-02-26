@@ -1,8 +1,8 @@
 ;;; My settings for programming in python-mode
-(require 'completion-mc)
-(package-install 'company-anaconda)
-(package-install 'anaconda-mode)
-(require 'hs-mc)
+(user/load-config "company")
+
+(use-package company-anaconda)
+(use-package anaconda-mode)
 
 ;; virtual env settings
 (package-install 'virtualenvwrapper)
@@ -28,13 +28,9 @@
   ;; tab width
   (setq tab-width 4)
 
-  ;; linting with flymake
+  ;; linting with flycheck
   (flycheck-mode t)
-  (flycheck-select-checker 'python-pylint)
-
-  ;; hide show mode
-  (hs-minor-mode t)
-  )
+  (flycheck-select-checker 'python-pylint))
 
 ;; Flycheck custom linter
 (setq-default flycheck-python-pylint-executable "pycheckers")
@@ -51,10 +47,3 @@
   (company-mode t))
 
 (add-to-list 'auto-mode-alist '("\\.flhtml\\'" . flask-html-initialize))
-
-;(if (boundp 'web-mode-engines-alist)
-;	(add-to-list 'web-mode-engines-alist '("django" . "\\.flhtml\\'"))
- ; (setq web-mode-engines-alist '("django" . "\\.flhtml\\'")))
-
-
-(provide 'python-mc)

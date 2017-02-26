@@ -8,5 +8,3 @@
   :init (progn
 		  (global-undo-tree-mode)
 		  (setq undo-tree-visualizer-timestamps t)))
-
-(provide 'undo-mc)

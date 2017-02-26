@@ -43,7 +43,3 @@
 
 ;; binding C-xC-c to kill the current session of files before leaving
 (global-set-key (kbd "C-x C-c") 'w32server/kill-session-with-server-alive)
-
-
-;; Package features
-(provide 'w32server)

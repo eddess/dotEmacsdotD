@@ -103,5 +103,3 @@
    ;; Filetype based
    `(sh-quoted-exec ((t (:foreground ,bt-green))))
   ))
-
-(provide 'light-theme-mc)
