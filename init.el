@@ -148,7 +148,7 @@
 (user/load-config "interactive")
 
 ;; project configuration
-(user/load-config "projectile")
+(user/load-config "project")
 
 ;; lisp configurations
 (user/load-config "lisp")
