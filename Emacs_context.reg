@@ -1,0 +1,9 @@
+REGEDIT4
+[HKEY_CLASSES_ROOT\*\shell]
+
+[HKEY_CLASSES_ROOT\*\shell\openwemacs]
+@="Edit with Emacs"
+"Icon"="C:\\Apps\\Emacs\\bin\\emacs.exe,0"
+
+[HKEY_CLASSES_ROOT\*\shell\openwemacs\command]
+@="C:\\Apps\\Emacs\\bin\\emacsclientw -n -a \"C:\\Apps\\Emacs\\bin\\runemacs\" \"%1\""
