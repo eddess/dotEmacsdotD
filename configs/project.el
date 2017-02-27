@@ -1,6 +1,6 @@
-(use-package helm-projectile)
-
 (use-package projectile
+  :ensure projectile
+  :ensure helm-projectile
 
   :init
   (setq projectile-indexing-method 'alien)

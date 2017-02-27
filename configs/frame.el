@@ -1,6 +1,5 @@
 ;; frame
 (use-package frame-cmds
-
   :demand t
 
   :init

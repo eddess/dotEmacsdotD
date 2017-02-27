@@ -1,8 +1,10 @@
 ;;; My settings for programming in python-mode
 (user/load-config "company")
 
-(use-package company-anaconda)
-(use-package anaconda-mode)
+(use-package company-anaconda
+  :ensure t)
+(use-package anaconda-mode
+  :ensure t)
 
 ;; virtual env settings
 (package-install 'virtualenvwrapper)

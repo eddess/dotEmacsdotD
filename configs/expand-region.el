@@ -1,5 +1,5 @@
 (use-package expand-region
-
+  :ensure t
   :init
   (require 'expand-region-core)
   (bind-key "C-c e e"    'er/expand-region)

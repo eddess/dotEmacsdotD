@@ -1,5 +1,6 @@
 ;; auto-complete with company-mode
 (use-package company
+  :ensure company
 
   :init
   ;; very litte delay. start completing right away

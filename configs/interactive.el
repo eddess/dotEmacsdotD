@@ -1,4 +1,5 @@
 (use-package smex
+  :ensure smex
 
   :init
   (bind-key "M-x" 'smex)
@@ -6,7 +7,7 @@
   (bind-key "C-c C-c M-x" 'execute-extended-command))
 
 (use-package flx-ido
-
+  :ensure flx-ido
   :init
   (setq ido-enable-flex-matching t)
   (setq-default ido-auto-merge-work-directories-length -1)
