@@ -138,6 +138,9 @@
 ;; Frame Functions
 (user/load-config "frame")
 
+;; VIML Emulation
+(user/load-config "evil")
+
 ;; Modeline
 (user/load-config "modeline")
 
