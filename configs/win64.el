@@ -2,4 +2,4 @@
 (user/load-config "win64-server")
 
 ;; font
-(add-to-list 'default-frame-alist '(font . "Consolas-10"))
+(add-to-list 'default-frame-alist '(font . "Consolas-9"))
