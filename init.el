@@ -19,8 +19,6 @@
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 (package-initialize)
-
-;; fetch the list of packages available
 (unless package-archive-contents
   (package-refresh-contents))
 
@@ -41,16 +39,13 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; CUA mode
-(cua-mode nil)
+(cua-mode t)
 
 ;; disable the bell
 (setq ring-bell-function 'ignore)
 
-;; better handling of large file scrolling
-;(setq jit-lock-defer-time 0.01)
-
-;; allow mouse in terminal
-(xterm-mouse-mode t)
+;; Large Files
+(setq large-file-warning-threshold nil)
 
 ;; frame title
 (setq frame-title-format
@@ -68,19 +63,14 @@
 ;; column numbers
 (column-number-mode t)
 
-;; Disable the tool bar
+;; Disable unused UI elements
 (if (functionp 'tool-bar-mode)
   (tool-bar-mode 0))
-;; hide menu bar
 (menu-bar-mode 0)
-
-;; scrolling
 (if (functionp 'scroll-bar-mode)
-  (scroll-bar-mode 0))
-(setq-default mouse-wheel-scroll-amount '(4 ((shift) . 4)))
-(setq mouse-wheel-progressive-speed nil)
-(setq mouse-wheel-follow-mouse 't)
-(setq scroll-step 4)
+	(progn
+	  (scroll-bar-mode 0)
+	  (horizontal-scroll-bar-mode 0)))
 
 ;; default indentation
 (setq-default indent-tabs-mode t)
@@ -101,60 +91,59 @@
   (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING)))
 
 ;; history related configs
-
 (setq savehist-file "~/.emacs.d/savehist")
-
 (setq savehist-additional-variables
 	  '(kill-ring
 		search-ring
 		regexp-search-ring))
-
 (setq history-length t)
 (setq history-delete-duplicates t)
 (setq savehist-save-minibuffer-history 1)
-
 (savehist-mode 1)
 
+;; Binding helpers
+(use-package which-key
+  :ensure t
+
+  :init
+  (setq which-key-popup-type 'minibuffer)
+
+  :config
+  (which-key-setup-minibuffer)
+  (which-key-mode t))
+
+(use-package general
+  :ensure t)
+
+(use-package hydra
+  :ensure t)
+
 ;; ================= 2.load packages and customizations ==================
-
-(defun user/load-theme (theme)
-  (load-library (concat "~/.emacs.d/themes/" theme ".el")))
-
 (defun user/load-config (config)
   (load-library (concat "~/.emacs.d/configs/" config ".el")))
-
 
 ;; OS settings
 (cond
  ((string-equal system-type "windows-nt") (user/load-config "win64"))
  ((string-equal system-type "darwin") (user/load-config "osx-core")))
 
-;; Expand region
-(user/load-config "expand-region")
-
-;; jump functions
-(user/load-config "ace-jump")
-
 ;; Frame Functions
 (user/load-config "frame")
 
-;; VIML Emulation
-(user/load-config "evil")
-
 ;; Modeline
 (user/load-config "modeline")
+
+;; Scrolling
+(user/load-config "scrolling")
 
 ;;undo-tree
 (user/load-config "undo-tree")
 
 ;; interactively do things
-(user/load-config "interactive")
+(user/load-config "Interactive")
 
-;; project configuration
+;; Project configuration
 (user/load-config "project")
-
-;; lisp configurations
-(user/load-config "lisp")
 
 ;; magit for git
 (user/load-config "git")
@@ -174,14 +163,12 @@
 ;; Golang
 (user/load-config "go")
 
+;; lisp configurations
+(user/load-config "lisp")
 
-;; Color theme
+
+;; 3. ========= Colour theme ===========
+(defun user/load-theme (theme)
+  (load-library (concat "~/.emacs.d/themes/" theme ".el")))
+
 (user/load-theme "light-theme")
-
-
-
-
-;; ================== 3. Post ==================
-;; clean package install file
-(if (file-exists-p "~/.emacs.d/elpa-download.txt")
-	(delete-file "~/.emacs.d/elpa-download.txt"))

@@ -1,11 +1,12 @@
 (use-package projectile
   :ensure projectile
-  :ensure helm-projectile
+  :ensure counsel-projectile
 
   :init
-  (setq projectile-indexing-method 'alien)
+  (setq projectile-indexing-method 'alien
+		projectile-keymap-prefix (kbd "C-c p")
+		projectile-completion-system 'ivy)
 
-  ;; Set projectile prefix key
-  (setq projectile-keymap-prefix (kbd "C-c p"))
-
-  (projectile-global-mode))
+  :config
+  (projectile-global-mode)
+  (counsel-projectile-on))
