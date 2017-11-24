@@ -1,5 +1,11 @@
 (setq user-search-leader (concat user-leader " s"))
 
+(use-package general
+  :ensure t)
+
+(use-package hydra
+  :ensure t)
+
 (use-package ivy
   :ensure flx
   :ensure ivy
@@ -13,25 +19,11 @@
   :config
   (ivy-mode 1))
 
-(use-package anzu
-  :ensure t
+(use-package search
+  :ensure visual-regexp-steroids
 
   :config
-  (setq anzu-cons-mode-line-p nil)
-  (global-anzu-mode t)
-
-  :general
-  (:prefix user-search-leader
-		   "" '(nil :which-key "Search")
-		   "f" '(isearch-forward :which-key "isearch forward")
-		   "b" '(isearch-backward :which-key "isearch backward")
-		   "r" '(anzu-query-replace :which-key "Replace")
-
-		   ;; Expression search
-		   "x" '(nil :which-key "RegExp")
-		   "x f" '(isearch-forward-regexp :which-key "regexp forward")
-		   "x b" '(isearch-backward-regexp :which-key "regexp backward")
-		   "x r" '(anzu-query-replace-regexp :which-key "Replace regexp")))
+  (require 'visual-regexp-steroids))
 
 (use-package avy
   :ensure t

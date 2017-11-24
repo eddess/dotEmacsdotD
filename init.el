@@ -101,23 +101,6 @@
 (setq savehist-save-minibuffer-history 1)
 (savehist-mode 1)
 
-;; Binding helpers
-(use-package which-key
-  :ensure t
-
-  :init
-  (setq which-key-popup-type 'minibuffer)
-
-  :config
-  (which-key-setup-minibuffer)
-  (which-key-mode t))
-
-(use-package general
-  :ensure t)
-
-(use-package hydra
-  :ensure t)
-
 ;; ================= 2.load packages and customizations ==================
 (defun user/load-config (config)
   (load-library (concat "~/.emacs.d/configs/" config ".el")))
@@ -126,6 +109,10 @@
 (cond
  ((string-equal system-type "windows-nt") (user/load-config "win64"))
  ((string-equal system-type "darwin") (user/load-config "osx-core")))
+
+;; interactively do things
+(user/load-config "interactive")
+
 
 ;; Frame Functions
 (user/load-config "frame")
@@ -138,9 +125,6 @@
 
 ;;undo-tree
 (user/load-config "undo-tree")
-
-;; interactively do things
-(user/load-config "Interactive")
 
 ;; Project configuration
 (user/load-config "project")

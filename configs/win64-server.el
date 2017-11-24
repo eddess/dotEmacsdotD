@@ -1,12 +1,12 @@
+(require 'cl)
+
 (server-start)
 
 ;; my delete frame function. Hides if last frame
 (defun w32server/delete-a-frame (fr)
-  (unless
-	  (condition-case nil
-		  (delete-frame fr t)
-		(error nil))
-	(make-frame-invisible nil t)))
+  (condition-case nil
+	  (delete-frame fr t)
+	(error nil (make-frame-invisible nil t))))
 
 ;; delete every frame
 (defun w32server/delete-all-frames ()
@@ -28,6 +28,7 @@
   (interactive)
   (setq w32server/killFlag t)
   (save-buffers-kill-terminal)
+  (w32server/delete-all-frames)
   (kill-emacs))
 
 ;; function that closes all buffers before quitting
