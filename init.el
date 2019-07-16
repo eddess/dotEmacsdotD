@@ -16,8 +16,15 @@
 
 ;; package management
 (require 'package)
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+(setq package-archives
+      '(("GNU ELPA"     . "https://elpa.gnu.org/packages/")
+        ("MELPA Stable" . "https://stable.melpa.org/packages/")
+        ("MELPA"        . "https://melpa.org/packages/"))
+      package-archive-priorities
+      '(("GNU ELPA"     . 10)
+        ("MELPA Stable" . 5)
+        ("MELPA"        . 0)))
+
 (package-initialize)
 (unless package-archive-contents
   (package-refresh-contents))
@@ -102,6 +109,7 @@
 (savehist-mode 1)
 
 ;; ================= 2.load packages and customizations ==================
+(setq user-leader "<apps>")
 (defun user/load-config (config)
   (load-library (concat "~/.emacs.d/configs/" config ".el")))
 
